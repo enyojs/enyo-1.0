@@ -1,0 +1,6 @@
+/*
+ * This css is included for media='print' to ensure that print dialog gets hidden and not printed.
+ */
+.print-dialog {
+    display: none;
+}

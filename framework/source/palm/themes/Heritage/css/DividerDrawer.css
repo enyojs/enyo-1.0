@@ -1,0 +1,19 @@
+.enyo-button-switched.enyo-collapsible-arrow {
+	height: 33px;
+	width: 56px;
+	background: url(../images/palm-divider-arrow.png) center 0px;
+}
+
+.enyo-collapsible-arrow {
+	height: 33px;
+	width: 56px;
+	background: url(../images/palm-divider-arrow.png) center -66px;
+}
+
+.enyo-button-down.enyo-switched.enyo-collapsible-arrow {
+	background-position: center -33px;
+}
+
+.enyo-button-down.enyo-collapsible-arrow {
+	background-position: center -99px;
+}

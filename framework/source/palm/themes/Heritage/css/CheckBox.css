@@ -1,0 +1,20 @@
+.enyo-checkbox {
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	height: 28px;
+	width: 33px;
+	background-image: url(../images/checkbox.png);
+}
+
+.enyo-checkbox-checked {
+	background-position: 0px -28px;
+}
+
+.enyo-checkbox-disabled {
+	background-position: 0px -56px;
+}
+
+.enyo-checkbox-disabled.enyo-checkbox-checked {
+	background-position: 0px -84px;
+}

@@ -1,0 +1,13 @@
+.enyo-roundy {
+	border-radius: 11px;
+	-moz-border-radius: 11px;
+	-webkit-border-radius: 11px;
+}
+
+.enyo-roundy-shadow {
+	background-color: transparent;
+	border-width: 14px 14px 14px 14px;
+	border-image: url(../images/roundy-shadow.png) 14 14;
+	-webkit-border-image: url(../images/roundy-shadow.png) 14 14;
+	-moz-border-image: url(../images/roundy-shadow.png) 14 14;
+}

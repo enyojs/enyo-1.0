@@ -1,0 +1,14 @@
+.enyo-scrim {
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	left: 0px;
+	bottom: 0px;
+	opacity: 0.3;
+	background: black;
+	z-index: 100;
+}
+
+.enyo-scrim.enyo-scrim-transparent {
+	opacity: 0;
+}

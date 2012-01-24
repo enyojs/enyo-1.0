@@ -1,0 +1,21 @@
+/* Submenu */
+/* overwriting the enyo rules to make the UI looks prettier on the particular case */
+.example-submenu .enyo-menuitem-icon {
+	padding: 0 5px 0 0; 
+	margin: -4px;
+}
+
+/* Error */
+.warning-icon {
+	background: url(../images/warning.png) 0 0 no-repeat;
+	height: 25px;
+}
+
+.enyo-text-error.warning-icon{
+	padding-left: 2em;
+}
+
+/* Picker */
+.picker-hbox {
+	margin-left: 12px;
+}

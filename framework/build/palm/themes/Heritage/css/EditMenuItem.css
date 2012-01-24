@@ -1,0 +1,10 @@
+.enyo-editmenuitem-icon {
+	background:url(../images/app-menu-icon-meta.png);
+	vertical-align:text-top;
+	height: 24px;
+	width: 24px;
+}
+
+.enyo-editmenuitem-shortcut {
+	color:#3F3F3F;
+}

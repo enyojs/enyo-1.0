@@ -1,0 +1,11 @@
+.enyo-button-icon {
+	display: inline-block;
+	vertical-align: baseline;
+	margin: 10px -16px;
+	width: 32px;
+	height: 32px;
+}
+
+.enyo-button-down .enyo-button-icon {
+	background-position: 0 -32px;
+}

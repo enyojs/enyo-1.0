@@ -1,0 +1,10 @@
+{
+	"id": "com.palmdts.enyo.popup-animation",
+	"version": "1.0.0",
+	"vendor": "HP",
+	"type": "web",
+	"main": "index.html",
+	"title": "Enyo Popup Animation",
+	"icon": "icon.png",
+	"uiRevision": 2
+}

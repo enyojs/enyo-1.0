@@ -1,0 +1,22 @@
+enyo.depends(
+	"LazyControl.js",
+	"Image.js",
+	"Stateful.js",
+	"CustomButton.js",
+	"Button.js",
+	"AjaxContent.js",
+	"HtmlContent.js",
+	"BasicInput.js",
+	"Input.js",
+	"InputBox.js",
+	"BasicRichText.js",
+	"RichText.js",
+	"AnimatedImage.js",
+	"Iframe.js",
+	"PopupLayer.js",
+	"BasicPopup.js",
+	"Popup.js",
+	"Scrim.js",
+	"LabeledContainer.js",
+	"Progress.js"
+);

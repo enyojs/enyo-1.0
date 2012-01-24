@@ -1,0 +1,10 @@
+{
+	"id": "com.palmdts.enyo.sampler",
+	"version": "1.0.0",
+	"vendor": "enyo",
+	"type": "web",
+	"main": "index.html",
+	"title": "Enyo Sampler",
+	"icon": "icon.png",
+	"uiRevision": 2
+}

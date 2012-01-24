@@ -1,0 +1,63 @@
+body {
+	color: #FFF;
+	font-family: Prelude, 'Prelude Medium', 'Segoe UI', Arial, Helvetica, sans-serif;
+	background:transparent;
+}
+
+.notification-container {
+	margin:0 10px 10px;
+}
+
+.notification-icon {
+		float: right;
+		margin-left:10px;
+}
+
+.notification-container .notification-icon + .notification-text {
+	min-height:50px;
+}
+
+.title {
+		margin-bottom:5px;
+		font-size: 18px;
+		font-weight: bold;
+		color: #fff;
+}
+
+.message {
+		font-size: 14px;
+		font-weight: bold;
+		color: #fff;
+}       
+
+.icon-warning {
+		background: url(../images/warning-icon.png) bottom left no-repeat;
+		height: 59px;
+		width: 59px;
+		margin-top:-8px;
+		margin-right:-8px;
+}
+
+.icon-flight-mode {
+		background: url(../images/flight-mode-icon.png) center center no-repeat;
+		width: 53px;
+		height: 55px;
+}
+
+.icon-wifi {
+		background: url(../images/system-notification-wifi-icon.png) bottom left no-repeat;
+		width: 60px;
+		height: 48px;
+}         
+                    
+.icon-bluetooth {
+		background: url(../images/system-notification-bluetooth.png) bottom left no-repeat;
+		width: 58px;
+		height: 70px;
+}
+
+.icon-network {
+		background: url(../images/wifi-zero-bars.png) bottom left no-repeat;
+		width: 60px;
+		height: 54px;
+}

@@ -1,0 +1,12 @@
+.enyo-addressing-popup {
+	margin: 0;
+	border-width: 0;
+	/* using a virtual list, must have a defined height */
+	/*border: 1px solid black;
+	height: 50%;*/
+	height: 100%;
+}
+
+.enyo-item > .enyo-addressing {
+	margin: -11px -10px;
+}

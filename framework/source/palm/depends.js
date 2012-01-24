@@ -1,0 +1,11 @@
+enyo.depends(
+	"platform/",
+	"system/",
+	"layout/",
+	"controls/",
+	"containers/",
+	"services/",
+	"list/",
+	"tellurium/",
+	"themes/Onyx/"
+);

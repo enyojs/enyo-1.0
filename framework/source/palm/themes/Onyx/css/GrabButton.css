@@ -1,0 +1,14 @@
+.enyo-grabbutton {
+	background-image: url(../images/grabbutton.png);
+	background-size: 46px 54px;
+	width: 46px;
+	height: 54px;
+	position: absolute;
+	left: 0;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-grabbutton {
+		background-image: url(../images-1.5/grabbutton.png);
+	}
+}

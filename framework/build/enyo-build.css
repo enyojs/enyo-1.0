@@ -1,0 +1,2524 @@
+/* Enyo v1.0 | Copyright 2011-2012 Hewlett-Packard Development Company, L.P. | enyojs.com | enyojs.com/license */
+/* dom/dom.css */
+
+/*
+	-webkit-user-select: none can cause a major 
+	performance problem in webkit unless mousedown
+	is prevented.
+*/
+body {
+	-webkit-user-select: none;
+	overflow: hidden;
+}
+
+/*
+div, object, img, textarea, iframe {
+	position: relative;
+}
+
+.enyo-bbox {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+*/
+
+.enyo-fit {
+	position: absolute !important;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+}
+
+/* base/themes/default-theme/css/base-layout.css */
+
+/**/
+
+.enyo-inline {
+	display: inline-block;
+}
+
+/**/
+
+.enyo-grid {
+	/*overflow: auto;*/
+	padding: 8px;
+}
+
+.enyo-grid-div {
+	float: left;
+	width: 64px;
+	height: 48px;
+	margin: 4px;
+	border: 1px solid gray;
+	box-shadow: 4px 4px 9px #888;
+	-moz-box-shadow: 4px 4px 9px #888;
+	-webkit-box-shadow: 4px 4px 9px #888;
+}
+
+/* base/themes/default-theme/css/FlexLayout.css */
+
+.enyo-hflexbox, .enyo-vflexbox {
+	display: -webkit-box;
+	-webkit-box-sizing: border-box;
+}
+
+.enyo-hflexbox {
+	-webkit-box-orient: horizontal;
+}
+
+.enyo-vflexbox {
+	-webkit-box-orient: vertical;
+}
+
+
+/* base/themes/default-theme/css/HLayout.css */
+
+.enyo-hlayout {
+	white-space: nowrap;
+}
+ 
+.enyo-hlayout > * {
+	display: inline-block;
+}
+
+
+
+/* base/themes/default-theme/css/Box.css */
+
+.enyo-hbox-div, .enyo-vbox-div{
+	position: absolute !important;
+}
+
+/* base/themes/default-theme/css/Drawer.css */
+
+.enyo-drawer {
+	overflow: hidden;
+}
+
+/* base/themes/default-theme/css/FloatingHeader.css */
+
+.enyo-floating-header {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	z-index: 2;
+}
+
+/* base/themes/default-theme/css/Iframe.css */
+
+.enyo-iframe {
+	/*
+	position: relative;
+	*/
+	background-color: white;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+
+
+/* base/themes/default-theme/css/RichText.css */
+
+.enyo-richtext {
+	word-wrap: break-word;
+	cursor: text;
+	border: none;
+	outline: none;
+	overflow: hidden;
+}
+
+.enyo-richtext-hint {
+	color: #A9A9A9;
+}
+
+.enyo-richtext {
+	-webkit-user-select: text;
+	-webkit-user-modify: read-write;
+	-webkit-line-break: after-white-space;
+}
+
+.enyo-richtext.enyo-richtext-plaintext {
+	-webkit-user-modify: read-write-plaintext-only;
+}
+
+.enyo-richtext.enyo-richtext-disabled, .enyo-richtext.enyo-richtext-plaintext.enyo-richtext-disabled {
+	-webkit-user-modify: read-only;
+	color: darkGray;
+}
+
+
+/* base/themes/default-theme/css/Scroller.css */
+
+.enyo-scroller {
+	overflow: hidden;
+	position: relative;
+}
+
+.enyo-scroller-client {
+}
+
+.enyo-scroller-scrollee {
+	-webkit-box-sizing: border-box;
+	min-height: 100%;
+	position: relative;
+}
+
+.enyo-scroller-fps {
+	z-index: 2;
+	font-size: 9px;
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	pointer-events: none;
+}
+
+/* base/themes/default-theme/css/ScrollFades.css */
+
+.enyo-scrollfades-top,
+.enyo-scrollfades-bottom,
+.enyo-scrollfades-left,
+.enyo-scrollfades-right {
+	position: absolute; 
+	z-index: 100;
+	pointer-events: none;
+}
+
+.enyo-scrollfades-top {
+	top: 0;
+	height: 54px; 
+	width: 100%;
+	background: url(base/themes/default-theme/images/fade-top.png) top center repeat-x;
+}
+
+.enyo-scrollfades-bottom {
+	bottom: 0;
+	height: 54px; 
+	width: 100%;
+	background: url(base/themes/default-theme/images/fade-bottom.png) bottom center repeat-x;
+}
+
+.enyo-scrollfades-left {
+	top: 0;
+	left: 0; 
+	height: 100%; 
+	width: 54px;
+	background: url(base/themes/default-theme/images/fade-left.png) left center repeat-y;
+}
+
+.enyo-scrollfades-right {
+	top: 0;
+	right: 0;
+	height: 100%; 
+	width: 54px;
+	background: url(base/themes/default-theme/images/fade-right.png) right center repeat-y;
+}
+
+/* base/themes/default-theme/css/VirtualRepeater.css */
+
+.enyo-virtual-repeater-strip {
+	-webkit-transform-style: preserve-3d;
+}
+
+
+/* base/themes/default-theme/css/PopupLayer.css */
+
+/*
+.enyo-popup-layer {
+	z-index: 1;
+	pointer-events: none;
+}
+
+.enyo-popup-layer > .enyo-popup-float, .enyo-popup-layer > .enyo-popup {
+	pointer-events: auto;
+}
+*/
+
+/* base/themes/default-theme/css/Pane.css */
+
+.enyo-pane {
+	-webkit-box-sizing: border-box;
+	position: relative;
+}
+
+.enyo-view {
+	position: absolute !important;
+	left: 0;
+	top: 0;
+	right: 0;
+	height: 100%;
+	-webkit-box-sizing: border-box;
+}
+
+
+/* palm/controls/image/RotatingImage.css */
+
+@-webkit-keyframes enyo-rotating-image-rotate {
+	0% { -webkit-transform: rotateZ(0deg);}
+	100% { -webkit-transform: rotateZ(359deg);}
+}
+.enyo-rotating-image {
+	-webkit-animation-name: enyo-rotating-image-rotate;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-timing-function: linear;
+	overflow: hidden;
+	/*background: -webkit-gradient(linear, left top, left bottom, from(#00ABEB), to(white), color-stop(0.5, white), color-stop(0.5, #6C0));*/
+	-webkit-background-origin: padding-box;
+	-webkit-background-clip: content-box;
+
+}
+
+
+/* palm/themes/Onyx/css/theme.css */
+
+html {
+	width: 100%;
+	position: relative;
+}
+
+body {
+	position: relative;
+	/* make this color transparent; note only transparent actually removes this color */
+	-webkit-tap-highlight-color: transparent;
+	background-color: #d8d8d8;
+	color: #333;
+}
+
+body, html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+html, body, input, button {
+	font-family: Prelude, Prelude Medium, Segoe UI, Arial, Helvetica, Sans-Serif;
+	font-size: 20px;
+	cursor: default;
+}
+
+.enyo-bg {
+	background-color: #d8d8d8;
+}
+
+.enyo-text-filter-highlight {
+	background: url(palm/themes/Onyx/images/filter-highlight.png) bottom left repeat-x;
+	background-size: 1px 4px;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-text-filter-highlight {
+		background-image: url(palm/themes/Onyx/images-1.5/filter-highlight.png);
+	}
+}
+
+.enyo-text-ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.enyo-label {
+	color: #1879cd;
+	font-size: .7rem;
+	text-transform: uppercase;
+}
+
+.enyo-text-header {
+	font-size: 1rem;
+}
+
+.enyo-text-subheader {
+	font-size: .9rem;
+}
+.enyo-text-body,
+.enyo-paragraph,
+.enyo-item-secondary {
+	font-size: .8rem;
+}
+
+.enyo-paragraph {
+	margin: .5em 0;
+}
+
+.enyo-item-ternary,
+.enyo-subtext {
+	font-size: .7rem;
+	color: #828282;
+}
+
+.enyo-footnote {
+	font-size: .8rem;
+	color: #666;
+}
+
+.enyo-text-error {
+	font-size: .7rem;
+	color: #d70000;
+}
+
+/* Preferences Styles */
+
+.enyo-preferences-box {
+	width: 500px;
+	margin: 23px auto 0;
+}
+
+.enyo-preference-button {
+	width: 290px;
+}
+
+/* palm/themes/Onyx/css/CheckBox.css */
+
+.enyo-checkbox {
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	height: 31px;
+	width: 30px;
+	margin: 0px;
+	background: url(palm/themes/Onyx/images/checkbox.png) -1px -1px;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-checkbox {
+		background-image: url(palm/themes/Onyx/images-1.5/checkbox.png);
+		background-size: 32px 128px;
+	}
+}
+
+.enyo-checkbox-checked {
+	background-position: -1px -33px;
+}
+
+.enyo-checkbox-disabled {
+	opacity: 0.4;
+}
+
+
+/* palm/themes/Onyx/css/Button.css */
+
+.enyo-button {
+	/* defeats flex; flex layout could set children to display block */
+	/*display: inline-block;*/
+	/*-webkit-box-sizing: border-box;*/
+	font-size: 16px;
+	line-height: 20px;
+	text-align: center;
+	padding: 4px 8px;
+	min-width: 14px;
+	min-height: 20px;
+	-webkit-border-image: url(palm/themes/Onyx/images/button-up.png) 4 4 4 4 stretch stretch;
+	border-width: 4px;
+	border-radius: 5px;
+	margin: 3px;
+	color: #292929;
+	background-color: rgba(255,255,255,0.8);
+}
+
+.enyo-button.enyo-button-down, .enyo-button.enyo-button-depressed {
+	-webkit-border-image: url(palm/themes/Onyx/images/button-down.png) 4 4 4 4 stretch stretch;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-button {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/button-up.png) 6 6 6 6 stretch stretch;
+	}
+	
+	.enyo-button.enyo-button-down, .enyo-button.enyo-button-depressed {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/button-down.png) 6 6 6 6 stretch stretch;
+	}
+}
+
+.enyo-button.enyo-button-disabled {
+	opacity: 0.4;
+	/*color: rgba(255,254,255,0.4);*/
+}
+
+.enyo-button-natural-width {
+}
+
+.enyo-button-standard-width {
+	min-width: 120px;
+}
+
+.enyo-button img {
+	padding: 0px 3px;
+}
+
+/* light button (often cancel) */
+
+.enyo-button-light {
+	background-color: rgba(255,255,255,0.8);
+	color: #292929;
+}
+
+/* dark button */
+
+.enyo-button-dark {
+	color: white;
+	background-color: rgba(23,23,23,0.5);
+}
+
+/* affirmative (green) */
+
+.enyo-button-affirmative {
+	color: white;
+	background-color: #2aa100;
+}
+
+/* negative (red) */
+
+.enyo-button-negative {
+	color: white;
+	background-color: #be0003;
+}
+
+/* blue */
+
+.enyo-button-blue {
+	color: white;
+	background-color: #2071bb;
+}
+
+/* gray */
+
+.enyo-button-gray {
+	color: white;
+	background-color: #4b4b4b;
+}
+
+/* notification button */
+
+.enyo-notification-button {
+	color: white;
+	background-color: #000;
+	padding: 6px 10px;
+	font-weight: bold;
+}
+
+/* notification button (affirmative) */
+
+.enyo-notification-button-affirmative {
+	background-color: #43a200;
+}
+
+/* notification button (negative) */
+
+.enyo-notification-button-negative {
+	background-color: #c01b1e;
+}
+
+/* notification button (alternate) */
+
+.enyo-notification-button-alternate {
+	background-color: #e5b900;
+}
+
+/* palm/themes/Onyx/css/ActivityButton.css */
+
+.enyo-activitybutton-spinner {
+	margin: -6px 0;
+}
+
+/* palm/themes/Onyx/css/RadioButton.css */
+
+.enyo-radiogroup {
+	white-space: nowrap;
+	cursor: pointer;
+	margin: 3px 0;
+}
+
+.enyo-radiobutton, .enyo-tabbutton {
+	text-align: center;
+	-webkit-box-sizing: border-box;
+	font-size: 16px;
+	border-width: 0px 16px;
+	padding: 7px 0 8px 0;
+}
+
+.enyo-tabbutton {
+	font-size: 18px;
+	padding: 8px 0 9px 0;
+	margin: -3px 0;
+}
+
+.enyo-radiobutton-dark {
+	color: white;
+}
+
+.enyo-radiobutton.enyo-button-disabled {
+	color: #7f7f7f;
+	opacity: 0.4;
+}
+
+.enyo-radiobutton-dark.enyo-button-disabled,
+.enyo-tabbutton.enyo-button-disabled {
+	color: #666;
+	opacity: 0.4;
+}
+
+.enyo-radiobutton.enyo-button-depressed,
+.enyo-radiobutton.enyo-button-down,
+.enyo-tabbutton.enyo-button-depressed,
+.enyo-tabbutton.enyo-button-down
+{
+	color: white;
+}
+
+@media (-webkit-max-device-pixel-ratio:1.49) { /* 1x */
+	.enyo-radiobutton.enyo-first {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 0 16 556 16;
+	}
+
+	.enyo-radiobutton.enyo-first.enyo-button-depressed,
+	.enyo-radiobutton.enyo-first.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 37 16 519 16;
+	}
+
+	.enyo-radiobutton.enyo-middle {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 74 16 482 16;
+	}
+
+	.enyo-radiobutton.enyo-middle.enyo-button-depressed,
+	.enyo-radiobutton.enyo-middle.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 111 16 445 16;
+	}
+
+	.enyo-radiobutton.enyo-last {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 148 16 408 16;
+	}
+
+	.enyo-radiobutton.enyo-last.enyo-button-depressed,
+	.enyo-radiobutton.enyo-last.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 185 16 371 16;
+	}
+
+	.enyo-radiobutton.enyo-single {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 222 16 334 16;
+	}
+
+	.enyo-radiobutton.enyo-single.enyo-button-depressed,
+	.enyo-radiobutton.enyo-single.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 259 16 297 16;
+	}
+
+
+	/* dark */
+
+	.enyo-radiobutton-dark.enyo-first {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 296 16 260 16;
+	}
+
+	.enyo-radiobutton-dark.enyo-first.enyo-button-depressed,
+	.enyo-radiobutton-dark.enyo-first.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 333 16 223 16;
+	}
+
+	.enyo-radiobutton-dark.enyo-middle {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 370 16 186 16;
+	}
+
+	.enyo-radiobutton-dark.enyo-middle.enyo-button-depressed,
+	.enyo-radiobutton-dark.enyo-middle.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 407 16 149 16;
+	}
+
+	.enyo-radiobutton-dark.enyo-last {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 444 16 112 16;
+	}
+
+	.enyo-radiobutton-dark.enyo-last.enyo-button-depressed,
+	.enyo-radiobutton-dark.enyo-last.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 481 16 75 16;
+	}
+
+	.enyo-radiobutton-dark.enyo-single {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 518 16 38 16;
+	}
+
+	.enyo-radiobutton-dark.enyo-single.enyo-button-depressed,
+	.enyo-radiobutton-dark.enyo-single.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 555 16 1 16;
+	}
+
+
+	/* tabs */
+
+	.enyo-tabbutton.enyo-first, .enyo-tabbutton.enyo-middle, .enyo-tabbutton.enyo-last, .enyo-tabbutton.enyo-single {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 74 16 482 16;
+	}
+
+	.enyo-tabbutton.enyo-first.enyo-button-depressed,
+	.enyo-tabbutton.enyo-first.enyo-button-down,
+	.enyo-tabbutton.enyo-middle.enyo-button-depressed,
+	.enyo-tabbutton.enyo-middle.enyo-button-down,
+	.enyo-tabbutton.enyo-last.enyo-button-depressed,
+	.enyo-tabbutton.enyo-last.enyo-button-down,
+	.enyo-tabbutton.enyo-single.enyo-button-depressed,
+	.enyo-tabbutton.enyo-single.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 111 16 445 16;
+	}
+
+}
+
+.enyo-tabbutton.enyo-first.enyo-button-disabled,
+.enyo-tabbutton.enyo-middle.enyo-button-disabled,
+.enyo-tabbutton.enyo-last.enyo-button-disabled,
+.enyo-tabbutton.enyo-single.enyo-button-disabled {
+	opacity: 0.4;
+}
+
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-radiobutton.enyo-first {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 0 16 834 16;
+	}
+
+	.enyo-radiobutton.enyo-first.enyo-button-depressed,
+	.enyo-radiobutton.enyo-first.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 55 16 779 16;
+	}
+
+	.enyo-radiobutton.enyo-middle {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 110 16 724 16;
+	}
+
+	.enyo-radiobutton.enyo-middle.enyo-button-depressed,
+	.enyo-radiobutton.enyo-middle.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 165 16 669 16;
+	}
+
+	.enyo-radiobutton.enyo-last {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 220 16 614 16;
+	}
+
+	.enyo-radiobutton.enyo-last.enyo-button-depressed,
+	.enyo-radiobutton.enyo-last.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 275 16 559 16;
+	}
+
+	.enyo-radiobutton.enyo-single {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 330 16 504 16;
+	}
+
+	.enyo-radiobutton.enyo-single.enyo-button-depressed,
+	.enyo-radiobutton.enyo-single.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 385 16 449 16;
+	}
+
+
+	/* dark */
+
+	.enyo-radiobutton-dark.enyo-first {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 440 16 394 16;
+	}
+
+	.enyo-radiobutton-dark.enyo-first.enyo-button-depressed,
+	.enyo-radiobutton-dark.enyo-first.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 495 16 339 16;
+	}
+
+	.enyo-radiobutton-dark.enyo-middle {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 550 16 284 16;
+	}
+
+	.enyo-radiobutton-dark.enyo-middle.enyo-button-depressed,
+	.enyo-radiobutton-dark.enyo-middle.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 605 16 229 16;
+	}
+
+	.enyo-radiobutton-dark.enyo-last {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 660 16 174 16;
+	}
+
+	.enyo-radiobutton-dark.enyo-last.enyo-button-depressed,
+	.enyo-radiobutton-dark.enyo-last.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 715 16 119 16;
+	}
+
+	.enyo-radiobutton-dark.enyo-single {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 770 16 64 16;
+	}
+
+	.enyo-radiobutton-dark.enyo-single.enyo-button-depressed,
+	.enyo-radiobutton-dark.enyo-single.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 825 16 9 16;
+	}
+
+
+	/* tabs */
+
+	.enyo-tabbutton.enyo-first, .enyo-tabbutton.enyo-middle, .enyo-tabbutton.enyo-last, .enyo-tabbutton.enyo-single {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 110 16 724 16;
+	}
+
+	.enyo-tabbutton.enyo-first.enyo-button-depressed,
+	.enyo-tabbutton.enyo-first.enyo-button-down,
+	.enyo-tabbutton.enyo-middle.enyo-button-depressed,
+	.enyo-tabbutton.enyo-middle.enyo-button-down,
+	.enyo-tabbutton.enyo-last.enyo-button-depressed,
+	.enyo-tabbutton.enyo-last.enyo-button-down,
+	.enyo-tabbutton.enyo-single.enyo-button-depressed,
+	.enyo-tabbutton.enyo-single.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 165 16 669 16;
+	}
+}
+
+
+
+/* palm/themes/Onyx/css/GroupedToolButton.css */
+
+.enyo-grouped-toolbutton {
+	text-align: center;
+	-webkit-box-sizing: border-box;
+	font-size: 16px;
+	border-width: 0px 16px;
+	padding: 7px 0 8px 0;
+	color: #332;
+}
+
+.enyo-grouped-toolbutton-dark {
+	color: white;
+}
+
+.enyo-grouped-toolbutton.enyo-button-disabled {
+	color: white;
+	opacity: 0.4;
+}
+
+.enyo-grouped-toolbutton-dark.enyo-button-disabled {
+	color: #666;
+	opacity: 0.4;
+}
+
+.enyo-grouped-toolbutton.enyo-button-depressed, .enyo-grouped-toolbutton.enyo-button-down {
+	color: white;
+}
+
+@media (-webkit-max-device-pixel-ratio:1.49) { /* 1x */
+
+	.enyo-grouped-toolbutton.enyo-first {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 0 16 556 16;
+	}
+
+	.enyo-grouped-toolbutton.enyo-first.enyo-button-depressed,
+	.enyo-grouped-toolbutton.enyo-first.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 37 16 519 16;
+	}
+
+	.enyo-grouped-toolbutton.enyo-middle {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 74 16 482 16;
+	}
+
+	.enyo-grouped-toolbutton.enyo-middle.enyo-button-depressed,
+	.enyo-grouped-toolbutton.enyo-middle.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 111 16 445 16;
+	}
+
+	.enyo-grouped-toolbutton.enyo-last {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 148 16 408 16;
+	}
+
+	.enyo-grouped-toolbutton.enyo-last.enyo-button-depressed,
+	.enyo-grouped-toolbutton.enyo-last.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 185 16 371 16;
+	}
+
+	.enyo-grouped-toolbutton.enyo-single {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 222 16 334 16;
+	}
+
+	.enyo-grouped-toolbutton.enyo-single.enyo-button-depressed,
+	.enyo-grouped-toolbutton.enyo-single.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 259 16 297 16;
+	}
+
+	/* dark */
+
+	.enyo-grouped-toolbutton-dark.enyo-first {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 296 16 260 16;
+	}
+
+	.enyo-grouped-toolbutton-dark.enyo-first.enyo-button-depressed,
+	.enyo-grouped-toolbutton-dark.enyo-first.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 333 16 223 16;
+	}
+
+	.enyo-grouped-toolbutton-dark.enyo-middle {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 370 16 186 16;
+	}
+
+	.enyo-grouped-toolbutton-dark.enyo-middle.enyo-button-depressed,
+	.enyo-grouped-toolbutton-dark.enyo-middle.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 407 16 149 16;
+	}
+
+	.enyo-grouped-toolbutton-dark.enyo-last {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 444 16 112 16;
+	}
+
+	.enyo-grouped-toolbutton-dark.enyo-last.enyo-button-depressed,
+	.enyo-grouped-toolbutton-dark.enyo-last.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 481 16 75 16;
+	}
+
+	.enyo-grouped-toolbutton-dark.enyo-single {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 518 16 38 16;
+	}
+
+	.enyo-grouped-toolbutton-dark.enyo-single.enyo-button-depressed,
+	.enyo-grouped-toolbutton-dark.enyo-single.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images/radiobutton.png) 555 16 1 16;
+	}
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) { /* 1.5x */
+
+	.enyo-grouped-toolbutton.enyo-first {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 0 16 834 16;
+	}
+
+	.enyo-grouped-toolbutton.enyo-first.enyo-button-depressed,
+	.enyo-grouped-toolbutton.enyo-first.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 55 16 779 16;
+	}
+
+	.enyo-grouped-toolbutton.enyo-middle {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 110 16 724 16;
+	}
+
+	.enyo-grouped-toolbutton.enyo-middle.enyo-button-depressed,
+	.enyo-grouped-toolbutton.enyo-middle.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 165 16 669 16;
+	}
+
+	.enyo-grouped-toolbutton.enyo-last {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 220 16 614 16;
+	}
+
+	.enyo-grouped-toolbutton.enyo-last.enyo-button-depressed,
+	.enyo-grouped-toolbutton.enyo-last.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 275 16 559 16;
+	}
+
+	.enyo-grouped-toolbutton.enyo-single {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 330 16 504 16;
+	}
+
+	.enyo-grouped-toolbutton.enyo-single.enyo-button-depressed,
+	.enyo-grouped-toolbutton.enyo-single.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 385 16 449 16;
+	}
+
+	/* dark */
+
+	.enyo-grouped-toolbutton-dark.enyo-first {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 440 16 394 16;
+	}
+
+	.enyo-grouped-toolbutton-dark.enyo-first.enyo-button-depressed,
+	.enyo-grouped-toolbutton-dark.enyo-first.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 495 16 339 16;
+	}
+
+	.enyo-grouped-toolbutton-dark.enyo-middle {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 550 16 284 16;
+	}
+
+	.enyo-grouped-toolbutton-dark.enyo-middle.enyo-button-depressed,
+	.enyo-grouped-toolbutton-dark.enyo-middle.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 605 16 229 16;
+	}
+
+	.enyo-grouped-toolbutton-dark.enyo-last {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 660 16 174 16;
+	}
+
+	.enyo-grouped-toolbutton-dark.enyo-last.enyo-button-depressed,
+	.enyo-grouped-toolbutton-dark.enyo-last.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 715 16 119 16;
+	}
+
+	.enyo-grouped-toolbutton-dark.enyo-single {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 770 16 64 16;
+	}
+
+	.enyo-grouped-toolbutton-dark.enyo-single.enyo-button-depressed,
+	.enyo-grouped-toolbutton-dark.enyo-single.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/radiobutton.png) 825 16 9 16;
+	}
+}
+
+/* palm/themes/Onyx/css/GrabButton.css */
+
+.enyo-grabbutton {
+	background-image: url(palm/themes/Onyx/images/grabbutton.png);
+	background-size: 46px 54px;
+	width: 46px;
+	height: 54px;
+	position: absolute;
+	left: 0;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-grabbutton {
+		background-image: url(palm/themes/Onyx/images-1.5/grabbutton.png);
+	}
+}
+
+/* palm/themes/Onyx/css/IconButton.css */
+
+.enyo-button-icon {
+	display: inline-block;
+	vertical-align: baseline;
+	width: 32px;
+	height: 32px;
+/*	background-size: 32px 64px;*/
+	margin: -6px -6px -10px -6px;
+}
+
+.enyo-button-down .enyo-button-icon {
+	background-position: 0 -32px;
+}
+
+
+/* palm/themes/Onyx/css/ToolButton.css */
+
+.enyo-tool-button {
+	cursor: pointer;
+	padding: 5px;
+}
+
+.enyo-tool-button-client {
+	font-size: 16px;
+	line-height: 20px;
+	text-align: center;
+	cursor: pointer;
+	border-width: 4px;
+	border-radius: 5px;
+	border-style: solid;
+	border-color: transparent;
+	min-width: 14px;
+	min-height: 20px;
+	margin: 3px;
+	color: #f2f2f2;
+}
+
+.enyo-tool-button-client > .enyo-button-icon {
+	margin: -2px -2px -6px;
+}
+
+.enyo-tool-button-client.enyo-tool-button-captioned {
+	padding: 4px 8px;
+	border-style: none;
+	-webkit-border-image: url(palm/themes/Onyx/images/button-toolbar.png) 4 4 4 4 stretch stretch;
+}
+
+
+.enyo-tool-button-client.enyo-tool-button-captioned.enyo-button-down, .enyo-tool-button-client.enyo-button-depressed {
+	-webkit-border-image: url(palm/themes/Onyx/images/button-down.png) 4 4 4 4 stretch stretch;
+}
+
+.enyo-tool-button-client.enyo-button-depressed {
+	/*background-color: #2071bb;*/
+}
+
+.enyo-tool-button-client.enyo-button-disabled {
+	opacity: 0.4;
+}
+
+
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-tool-button-client.enyo-tool-button-captioned.enyo-button-down, .enyo-tool-button-client.enyo-button-depressed {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/button-down.png) 6 6 6 6 stretch stretch;
+	}
+	
+	.enyo-tool-button-client.enyo-tool-button-captioned {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/button-toolbar.png) 6 6 6 6 stretch stretch;
+	}
+}
+
+
+
+/* palm/themes/Onyx/css/Scrim.css */
+
+.enyo-scrim {
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	left: 0px;
+	bottom: 0px;
+	opacity: 0;
+	z-index: 100;
+	background: black;
+	-webkit-transition-property: opacity;
+	-webkit-transition-duration: 0.5s;
+}
+
+.enyo-scrim.enyo-scrim-dim {
+	opacity: 0.65;
+}
+
+.enyo-scrim.enyo-scrim-transparent {
+	background: transparent;
+	opacity: 1;
+}
+
+/* palm/themes/Onyx/css/Popup.css */
+
+.enyo-popup {
+	min-width: 300px;
+	z-index: 120;
+	/* Causes rendering artifacts */
+	/*position: fixed;*/
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	-webkit-box-sizing: border-box;
+	border-width: 24px;
+	-webkit-border-image: url(palm/themes/Onyx/images/popup.png) 24 24 24 24 stretch stretch;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-popup {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/popup.png) 36 36 36 36 stretch stretch;
+	}
+}
+
+
+.enyo-popup-inner {
+	margin: -7px -14px;
+	/* NOTE: experimental use of css clipping to solve highlights not overflowing curved corners */
+	/* does not work on pre/emulator as of build 3455. */
+	/*-webkit-mask-box-image: url(palm/themes/Onyx/images/popup-mask.png) 10 10 10 10 stretch stretch;*/
+}
+
+/* palm/themes/Onyx/css/Menu.css */
+
+.enyo-popup.enyo-popup-menu {
+	min-width: inherit;
+	border-width: 20px;
+	-webkit-border-image: url(palm/themes/Onyx/images/menu-background.png) 20 20 20 20 stretch stretch;
+	
+	/* FIXME: consider when works more reliably */
+	/*
+	-webkit-transition-property: opacity, -webkit-tranform;
+	-webkit-transition-duration: 0.25s, 0.25s;
+	-webkit-transform: scale(0);
+	-webkit-transform-origin: 50% 0;
+	opacity: 0;
+	*/
+}
+
+/*
+.enyo-popup.enyo-menu-open {
+	-webkit-transform: scale(1);
+	opacity: 1;
+	
+}
+*/
+
+.enyo-menu-inner {
+	margin: -3px -14px;
+}
+
+.enyo-menu-scroll-fades {
+	pointer-events: none;
+}
+
+.enyo-menu-top-fade,
+.enyo-menu-bottom-fade {
+	position: absolute; 
+	pointer-events: none;
+}
+
+.enyo-menu-top-fade {
+	top: -10px;
+	height: 10px; 
+	width: 100%;
+	background: url(palm/themes/Onyx/images/menu-fade-arrow-up.png) top center no-repeat no-repeat;
+}
+
+.enyo-menu-bottom-fade {
+	bottom: -11px;
+	height: 10px; 
+	width: 100%;
+	background: url(palm/themes/Onyx/images/menu-fade-arrow-down.png) bottom center no-repeat no-repeat;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-menu-top-fade {
+		background-image: url(palm/themes/Onyx/images-1.5/menu-fade-arrow-up.png);
+		background-size: 8px 8px;
+	}
+	.enyo-menu-bottom-fade {
+		background-image: url(palm/themes/Onyx/images-1.5/menu-fade-arrow-down.png);
+		background-size: 8px 8px;
+	}
+	.enyo-popup.enyo-popup-menu {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/menu-background.png) 30 30 30 30 stretch stretch;
+	}
+}
+
+
+
+
+/* palm/themes/Onyx/css/Item.css */
+
+.enyo-item {
+	border-top: 1px solid rgba(255,255,255,0.5);
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+	padding: 10px;
+	font-size: .9rem;
+}
+
+.enyo-held {
+	/*background-color: gray;*/
+	/* fancy... can we get away with this or do we need to use images? */
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(218,235,251,0.4)), to(rgba(197,224,249,0.4)));
+}
+
+.enyo-item-selected {
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(218,235,251,0.4)), to(rgba(197,224,249,0.4)));
+}
+
+.enyo-disabled {
+	opacity: 0.5;
+}
+
+.enyo-item.enyo-first {
+	border-top: 0;
+}
+
+.enyo-item.enyo-last {
+	border-bottom: 0;
+}
+
+.enyo-item.enyo-single {
+	/*
+		due to webos webkit bug, must have a non-zero border when -webkit-gradient 
+		and border-radius are used together or else the border radius will be ignored.
+	*/
+	/* border: 0;*/
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+}
+
+.enyo-group-inner > .enyo-item, .enyo-item.rounded {
+	-webkit-border-radius: 8px;
+}
+
+.enyo-group-inner > .enyo-item.enyo-first, .enyo-item.rounded.enyo-first {
+	-webkit-border-bottom-right-radius: 0;
+	-webkit-border-bottom-left-radius: 0;
+}
+
+.enyo-group-inner > .enyo-item.enyo-middle, .enyo-item.rounded.enyo-middle {
+	-webkit-border-radius: 0;
+}
+
+.enyo-group-inner > .enyo-item.enyo-last, .enyo-item.rounded.enyo-last {
+	-webkit-border-top-right-radius: 0;
+	-webkit-border-top-left-radius: 0;
+}
+
+
+/* palm/themes/Onyx/css/MenuItem.css */
+
+.enyo-menuitem {
+}
+
+.enyo-menuitem-caption {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.enyo-menuitem-icon {
+	padding: 2px 8px;
+}
+
+.enyo-menuitem-arrow.enyo-button-depressed,
+.enyo-menuitem-arrow.enyo-button-down {
+	background-position: 0px -24px;
+}
+
+.enyo-menuitem-arrow {
+	height: 24px;
+	width: 30px;
+	background: url(palm/themes/Onyx/images/menuitem-arrow.png) center 0px;
+	margin-right: -5px;
+}
+
+.enyo-menuitem.enyo-checked.enyo-menucheckitem-caption, .enyo-menuitem.enyo-checked .enyo-menucheckitem-caption {
+	background: url(palm/themes/Onyx/images/checkmark.png) center right no-repeat;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-menuitem-arrow {
+		background-image: url(palm/themes/Onyx/images-1.5/menuitem-arrow.png);
+		background-size: 24px 48px;
+	}
+	.enyo-menuitem.enyo-checked.enyo-menucheckitem-caption, .enyo-menuitem.enyo-checked .enyo-menucheckitem-caption {
+		background-image: url(palm/themes/Onyx/images-1.5/checkmark.png);
+		background-size: 32px;
+	}
+}
+
+.enyo-menucheckitem-caption {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 16px;
+	line-height: 22px;
+	padding-right: 34px;
+}
+
+/* palm/themes/Onyx/css/EditMenuItem.css */
+
+
+
+/* palm/themes/Onyx/css/AppMenu.css */
+
+.enyo-popup.enyo-appmenu {
+	z-index: 120;
+	position: fixed;
+	font-size: 18px;
+	border-width: 12px 24px 20px 24px;
+	-webkit-border-image: url(palm/themes/Onyx/images/appmenu.png) 12 24 20 24 stretch stretch;
+	color: white;
+	top: 0px;
+	left: -10px;
+	min-width: 210px;
+	/* FIXME: consider when works more reliably */
+	/*
+	-webkit-transition-property: opacity, -webkit-tranform;
+	-webkit-transition-duration: 0.5s, 0.5s;
+	-webkit-transform: translateY(-100%);
+	*/
+}
+
+/*
+.enyo-appmenu.enyo-menu-open {
+	-webkit-transform: translateY(0%);
+	opacity: 1;
+}
+*/
+
+.enyo-appmenu-inner {
+	margin: -12px -14px 0 -13px;
+}
+
+
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-popup.enyo-appmenu {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/appmenu.png) 18 36 30 36 stretch stretch;
+	}
+}
+
+/* palm/themes/Onyx/css/AppMenuItem.css */
+
+.enyo-appmenu-item.enyo-item {
+	-webkit-border-image: url(palm/themes/Onyx/images/appmenu-divider.png) 0 0 2 0 stretch;
+	color: white;
+	border-bottom: 2px;
+	padding: 10px 7px 10px 5px;
+	font-size: 18px;
+}
+
+.enyo-appmenu-item.enyo-held {
+	background-image: url(palm/themes/Onyx/images/appmenu-highlight.png);
+	background-size: 40px 56px;
+}
+
+.enyo-appmenu-item.enyo-item.enyo-menu-last {
+	border-bottom: 0;
+}
+
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-appmenu-item.enyo-item { 
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/appmenu-divider.png) 0 0 3 0 stretch;
+	}
+	
+	.enyo-appmenu-item.enyo-held {
+		background-image: url(palm/themes/Onyx/images-1.5/appmenu-highlight.png);
+	}
+	
+}
+
+/* palm/themes/Onyx/css/Divider.css */
+
+.enyo-divider,
+.enyo-divider-right-cap,
+.enyo-divider-left-cap {
+	height: 4px;
+	margin: 13px 0px;
+}
+
+.enyo-divider {
+	background: url(palm/themes/Onyx/images/divider.png) left top repeat-x;
+	background-size: 6px 4px;
+}
+
+.enyo-divider-right-cap {
+	border-right-width: 0px;
+	margin-right: 7px;
+}
+
+.enyo-divider-left-cap {
+	min-width: 3px;
+	border-width: 0px;
+	background: url(palm/themes/Onyx/images/divider.png) left top repeat-x;
+	background-size: 6px 4px;
+	margin-left: 6px;
+
+	/* Needs to be effectively infinity compared to .enyo-divider-caption's
+ 	   flex so the left cap will take as much space as possible */
+	-webkit-box-flex: 1000;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-divider,
+	.enyo-divider-left-cap {
+		background-image: url(palm/themes/Onyx/images-1.5/divider.png);
+	}
+}
+
+
+.enyo-divider-icon {
+	margin: 0 6px;
+}
+
+.enyo-divider-icon-collapse {
+	margin: 0 6px 0 0;
+}
+
+.enyo-divider-caption {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-weight: bold;
+	font-size: 12pt;
+	color: #3a8bcb;
+
+	/* Needs to be effectively zero compared to .enyo-divider-left-cap's
+	   flex so the caption will flex but take as little space as possible
+	   and still truncate properly */
+	-webkit-box-flex: .1;
+}
+
+.enyo-divider-alpha {
+	background: url(palm/themes/Onyx/images/divider.png) left center repeat-x;
+	background-size: 6px 4px;
+	height: 30px;
+	line-height: 30px;
+	margin: 0 0 0 30px;
+}
+
+.enyo-divider-alpha-caption {
+	margin-left: -23px;
+	font-size: 12pt;
+	font-weight: bold;
+	color: #4299ea;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-divider-alpha {
+		background-image: url(palm/themes/Onyx/images-1.5/divider.png);
+	}
+}
+
+
+
+/* palm/themes/Onyx/css/DividerDrawer.css */
+
+
+.enyo-collapsible-arrow {
+	height: 40px;
+	width: 50px;
+	background: url(palm/themes/Onyx/images/divider-arrow.png) center -80px;
+	background-size: 50px 160px;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-collapsible-arrow {
+		background-image: url(palm/themes/Onyx/images-1.5/divider-arrow.png);
+	}
+}
+
+.enyo-button-switched.enyo-collapsible-arrow {
+	background-position: center 0px;
+}
+
+.enyo-button-down.enyo-button-switched.enyo-collapsible-arrow {
+	background-position: center -40px;
+}
+
+.enyo-button-down.enyo-collapsible-arrow {
+	background-position: center -120px;
+}
+
+/* palm/themes/Onyx/css/ProgressBar.css */
+
+.enyo-progress-bar {
+	height: 12px;
+	border-width: 0 4px;
+	-webkit-border-image: url(palm/themes/Onyx/images/progress-bar.png) 0 4 0 4 repeat repeat;
+	-webkit-box-sizing: border-box;
+	position:relative;
+}
+
+.enyo-progress-bar-inner {
+	margin: 0 -5px;
+	height: 12px;
+	border-width: 0 4px;
+	position: absolute;
+	z-index:10; /* for progressSlider altBarPosition */
+	-webkit-border-image: url(palm/themes/Onyx/images/progress-bar-inner.png) 0 4 0 4 repeat repeat;
+} 
+
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-progress-bar {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/progress-bar.png) 0 6 0 6 stretch stretch;
+	}
+	.enyo-progress-bar-inner {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/progress-bar-inner.png) 0 6 0 6 stretch stretch;
+	}
+}
+
+
+
+/* palm/themes/Onyx/css/ProgressBarItem.css */
+
+
+.enyo-progress-bar-item {
+	min-height: 24px;
+	border-width: 12px 0px;
+	-webkit-border-image: url(palm/themes/Onyx/images/progress-item.png) 12 0 12 0 repeat repeat;
+	-webkit-box-sizing: border-box;
+	position:relative;
+}
+
+.enyo-progress-bar-item-inner {
+	margin: -12px 0px;
+	padding: 12px 0px;
+	height:100%;
+	border-width: 0 8px 0 0;
+	position:absolute;
+	-webkit-border-image: url(palm/themes/Onyx/images/progress-item-inner.png) 0 8 0 0 repeat stretch;
+}
+
+.enyo-progress-bar-item-client {
+	margin: -12px 0px;
+	position:relative;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-progress-bar-item {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/progress-item.png) 18 0 18 0 stretch repeat;
+	}
+	.enyo-progress-bar-item-inner {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/progress-item-inner.png) 0 12 0 0 repeat stretch;
+	}	
+}
+
+
+/* palm/themes/Onyx/css/ProgressButton.css */
+
+.enyo-progress-button {
+	min-height: 34px;
+	border-width: 4px;
+	border-radius: 5px;
+	-webkit-border-image: url(palm/themes/Onyx/images/button-down.png) 4 4 4 4 stretch stretch;
+	color: white;
+	background-color: rgba(23,23,23,0.5);
+	margin: 3px;
+	position:relative;
+	font-size: 18px;
+	line-height: 34px;
+}
+
+.enyo-progress-button-inner {
+	margin: -4px;
+	top: 0;
+	bottom: 0;
+	border-width: 4px;
+	border-radius: 5px;
+	position: absolute;
+	-webkit-border-image: url(palm/themes/Onyx/images/button.png) 4 4 4 4 stretch stretch;
+}
+
+.enyo-progress-button-client {
+	margin: 0 5px;
+	position:relative;
+}
+
+.enyo-progress-button-cancel {
+	position:relative;
+	width:32px;
+	height:32px;
+	margin-right:2px;
+	margin-top:2px;
+	background-image: url(palm/themes/Onyx/images/progress-button-cancel.png);
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-progress-button {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/button-down.png) 6 6 6 6 stretch stretch;
+	}
+	
+	.enyo-progress-button-inner {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/button.png) 6 6 6 6 stretch stretch;
+	}
+	
+	.enyo-progress-button-cancel {
+		background-image: url(palm/themes/Onyx/images-1.5/progress-button-cancel.png);
+		background-size: 32px 64px;
+	}
+}
+
+
+.enyo-progress-button-cancel:active {
+	background-position: 0 -32px;
+}
+
+.enyo-progress-button.affirmative > .enyo-progress-button-inner {
+	color: white;
+	background-color: #2aa100;
+}
+
+.enyo-progress-button.negative > .enyo-progress-button-inner {
+	color: white;
+	background-color: #be0003;
+}
+
+.enyo-progress-button.light > .enyo-progress-button-inner {
+	background-color: rgba(255,255,255,0.8);
+	color: #292929;
+}
+
+.enyo-progress-button.dark > .enyo-progress-button-inner {
+	color: white;
+	background-color: rgba(23,23,23,0.5);
+}
+
+.enyo-progress-button.blue > .enyo-progress-button-inner {
+	color: white;
+	background-color: #2071bb;
+}
+
+
+
+
+/* palm/themes/Onyx/css/ProgressSlider.css */
+
+.enyo-progress-slider {
+	height: 10px;
+	border-width: 0 4px;
+	-webkit-border-image: url(palm/themes/Onyx/images/slider-track.png) 0 4 0 4 repeat repeat;
+	-webkit-box-sizing: border-box;
+	position:relative;
+}
+
+.enyo-progress-slider-alt-bar, .enyo-progress-slider > .enyo-progress-bar-inner {
+	height: 10px;
+	border-width: 0 4px;
+	margin: 0 -4px;
+	position: absolute;
+	-webkit-border-image: url(palm/themes/Onyx/images/slider-progress.png) 0 4 0 4 repeat repeat;
+}
+
+.enyo-progress-slider-alt-bar {
+	z-index:5; /* under primary progress */
+	-webkit-border-image: url(palm/themes/Onyx/images/slider-progress-secondary.png) 0 4 0 4 repeat repeat;
+	-webkit-transition: width 0.3s ease;
+}
+
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-progress-slider {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/slider-track.png) 0 6 0 6 repeat stretch;
+	}
+	
+	.enyo-progress-slider > .enyo-progress-bar-inner {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/slider-progress.png) 0 6 0 6 repeat stretch;
+	}
+	
+	.enyo-progress-slider-alt-bar {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/slider-progress-secondary.png) 0 6 0 6 repeat stretch;
+	}
+}
+
+
+
+/* palm/themes/Onyx/css/Slider.css */
+
+.enyo-slider-button {
+	height: 40px;
+	width: 40px;
+	z-index: 50;
+	background: url(palm/themes/Onyx/images/slider-handle.png) left top no-repeat;
+	position: absolute;
+	margin: -14px -20px;
+}
+
+.enyo-slider-button.enyo-button-down {
+	background-position-y: -40px;
+}
+
+.enyo-slider {
+	/* 
+	FIXME: why in the heck does this work to properly position the progress
+	div inside this one?
+	*/
+	padding: 1px 0;
+	position:relative;
+}
+
+.enyo-slider-progress {
+	height: 10px;
+	border-width: 0px 4px;
+	-webkit-border-image: url(palm/themes/Onyx/images/slider-track.png) 0 4 0 4 repeat repeat;
+	margin: 20px 0px;
+	position:relative;
+}
+
+.enyo-slider-inner {
+	margin: 0 -4px;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-slider-button {
+		background-image: url(palm/themes/Onyx/images-1.5/slider-handle.png);
+		background-size: 40px 80px;
+	}
+	
+	.enyo-slider-progress {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/slider-track.png) 0 6 0 6 repeat stretch;
+	}
+}
+
+/* palm/themes/Onyx/css/Header.css */
+
+.enyo-header {
+	-webkit-border-image: url(palm/themes/Onyx/images/header.png) 2 0;
+	-webkit-box-sizing: border-box;
+	min-height: 50px;
+	border-width: 2px 0;
+	background-color: #ccc;
+	color: #444;
+	/*
+		Note: shadow is problematic if we support background colors.
+		Afaict, has to be done with a separate div or webkit-box-shadow; (unsupported on device)
+	*/
+	/*
+	-webkit-box-shadow: 0 0 4px #888;
+	*/
+}
+
+.enyo-header.enyo-header-dark {
+	-webkit-border-image: url(palm/themes/Onyx/images/toolbar.png) 2 4 repeat stretch;
+	border-width: 2px 0;
+	background-color: #343434;
+	color: #fff;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-header {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/header.png) 3 0;
+	}
+	
+	.enyo-header.enyo-header-dark {
+		-webkit-border-image: url(palm/themes/Onyx/images/toolbar.png) 3 6 repeat stretch;
+	}
+}
+
+.enyo-header-inner {
+	padding: 13px 12px;
+	min-height: 52px;
+}
+
+.enyo-header-icon {
+	padding-right: 10px;
+}
+
+/* palm/themes/Onyx/css/Toolbar.css */
+
+.enyo-toolbar {
+	/* needed to host a GrabButton, which is position: absolute */
+	position: relative;
+	min-height: 54px;
+	-webkit-box-sizing: border-box;
+	-webkit-border-image: url(palm/themes/Onyx/images/toolbar.png) 2 4 repeat stretch;
+	border-width: 2px 4px;
+	background-color: #343434;
+}
+
+.enyo-toolbar-light {
+	-webkit-border-image: url(palm/themes/Onyx/images/toolbar-light.png) 2 4 repeat stretch;
+	background-color: #a9a9a9;
+}
+
+.enyo-toolbar-snap-out {
+	opacity: 0;
+}
+
+.enyo-toolbar-fade-in {
+	-webkit-transition: opacity 0.15s linear;
+	opacity: 1;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-toolbar {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/toolbar.png) 3 6 repeat stretch;
+	}
+	
+	.enyo-toolbar-light {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/toolbar-light.png) 3 6 repeat stretch;
+	}
+}
+
+/* palm/themes/Onyx/css/ConfirmPrompt.css */
+
+.enyo-confirmprompt {
+	position: relative;
+}
+
+.enyo-confirmprompt-scrim {
+	-webkit-border-image: url(palm/themes/Onyx/images/confirmprompt-background.png) 20 0 repeat;
+	-webkit-box-sizing: border-box;
+	border-width: 20px 0px;
+	background-color: #fff;
+}
+
+.enyo-confirmprompt-button {
+	margin: 0 10px;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-confirmprompt-scrim {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/confirmprompt-background.png) 30 0 stretch;
+	}
+}
+
+/* palm/themes/Onyx/css/SwipeableItem.css */
+
+.enyo-swipeableitem {
+	/*position: relative;*/
+	min-height: 44px;
+	padding: 8px 14px;
+}
+
+/* palm/themes/Onyx/css/ToggleButton.css */
+
+.enyo-item > .enyo-toggle-button {
+	margin: -10px;
+	
+}
+
+.enyo-toggle-button {
+	padding: 10px;
+}
+
+.enyo-toggle-button-bar {
+	min-width: 36px;
+	height: 30px;
+	line-height: 26px;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.enyo-toggle-button-bar.on {
+	border-width: 0px 30px 0px 8px;
+	-webkit-border-image: url(palm/themes/Onyx/images/toggle-button.png) 1 30 97 8 repeat repeat;
+}
+
+.enyo-toggle-button-bar.off {
+	border-width: 0px 8px 0px 30px;
+	-webkit-border-image: url(palm/themes/Onyx/images/toggle-button.png) 33 8 65 30 repeat repeat;
+}
+
+.enyo-toggle-button-bar.disabled.on {
+	border-width: 0px 30px 0px 8px;
+	-webkit-border-image: url(palm/themes/Onyx/images/toggle-button.png) 65 30 33 8 repeat repeat;
+}
+
+.enyo-toggle-button-bar.disabled.off {
+	border-width: 0px 8px 0px 30px;
+	-webkit-border-image: url(palm/themes/Onyx/images/toggle-button.png) 97 8 1 30 repeat repeat;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-toggle-button-bar.on {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/toggle-button.png) 2 45 145 12 stretch stretch;
+	}
+
+	.enyo-toggle-button-bar.off {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/toggle-button.png) 50 12 97 45 stretch stretch;
+	}
+
+	.enyo-toggle-button-bar.disabled.on {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/toggle-button.png) 98 45 49 12 stretch stretch;
+	}
+
+	.enyo-toggle-button-bar.disabled.off {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/toggle-button.png) 146 12 1 45 stretch stretch;
+	}
+}
+
+.enyo-toggle-label-off, .enyo-toggle-label-on {
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.enyo-toggle-label-off {
+	padding-left: 4px;
+	padding-right: 2px;
+	text-transform: uppercase;
+}
+
+.enyo-toggle-label-on {
+	padding-right: 4px;
+	padding-left: 2px;
+	text-transform: uppercase;
+}
+
+.enyo-tool-button.enyo-button-disabled {
+	opacity: 0.4;
+	/*color: rgba(255,254,255,0.4);*/
+}
+
+
+/* palm/themes/Onyx/css/PopupSelect.css */
+
+.enyo-popupselect {
+	/*border-width: 19px;
+	-webkit-border-image: url(palm/themes/Onyx/images/popupselect-background.png) 23 23 23 23 stretch stretch;*/
+}
+
+/* palm/themes/Onyx/css/ListSelector.css */
+
+.enyo-listselector-arrow {
+	min-height: 34px;
+	width: 14px;
+	background: url(palm/themes/Onyx/images/menu-arrow.png) center right no-repeat;
+	background-size: 14px 10px;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-listselector-arrow {
+		background-image: url(palm/themes/Onyx/images-1.5/menu-arrow.png);
+	}
+}
+
+.enyo-listselector-label {
+	margin: 1px 6px 0px 6px;
+	line-height: 34px;
+	font-size: 14px;
+	white-space: nowrap;
+}
+
+.enyo-listselector-item {
+	border: 0;
+	padding: 0;
+}
+
+.enyo-listselector-item > .enyo-menucheckitem-caption {
+	padding-right: 2px;
+}
+
+.enyo-item > .enyo-listselector {
+	margin: -10px 0;
+	padding: 10px 0;
+}
+
+/* palm/themes/Onyx/css/PickerButton.css */
+
+.enyo-picker-button {
+	-webkit-border-image: url(palm/themes/Onyx/images/picker-pill.png) 10;
+	border-width: 10px;
+	font-size: 16px;
+	line-height: 32px;
+}
+
+.enyo-picker-button-caption {
+	padding: 0 6px;
+	min-width: 24px;
+	text-align: center;
+}
+
+.enyo-picker-button.enyo-button {
+	-webkit-border-image: url(palm/themes/Onyx/images/picker-pill.png) 10;
+}
+
+.enyo-picker-button.enyo-button-down {
+	-webkit-border-image: url(palm/themes/Onyx/images/picker-pill-downstate.png) 10;
+}
+
+.enyo-picker-button.enyo-button-focus {
+	-webkit-border-image: url(palm/themes/Onyx/images/picker-pill-focus.png) 10;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-picker-button {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/picker-pill.png) 15;
+	}
+
+	.enyo-picker-button.enyo-button-down {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/picker-pill-downstate.png) 15;
+	}
+
+	.enyo-picker-button.enyo-button-focus {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/picker-pill-focus.png) 15;
+	}
+}
+
+/* palm/themes/Onyx/css/Picker.css */
+
+.enyo-picker-label {
+	line-height: 52px;
+	padding-right: 5px;
+	font-size: 18px;
+}
+
+.enyo-picker-popup {
+
+}
+
+.enyo-picker-item-selected {
+	font-weight: bold;
+	background: #fff;
+}
+
+
+/* palm/themes/Onyx/css/PickerGroup.css */
+
+.enyo-pickergroup-above-scrim {
+	z-index: 110;
+}
+
+.enyo-pickergroup-pickerpopup {
+	border-width: 0;
+	-webkit-border-image: none;
+	min-width: 0px;
+}
+
+
+/* palm/themes/Onyx/css/Group.css */
+
+.enyo-group {
+	border-width: 14px 14px 14px 14px;
+	-webkit-border-image: url(palm/themes/Onyx/images/group-unlabeled.png) 14 14 repeat repeat;
+	margin: 8px 3px;
+}
+
+.enyo-group-inner {
+	margin: -12px;
+}
+
+.enyo-row {
+	border-bottom: 1px solid gray;
+}
+
+.enyo-group.labeled {
+	border-width: 36px 14px 14px 14px;
+	-webkit-border-image: url(palm/themes/Onyx/images/group-labeled.png) 36 14 14 14 repeat repeat;
+	margin: 8px 3px;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-group {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/group-unlabeled.png) 21 21 stretch stretch;
+	}
+	.enyo-group.labeled {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/group-labeled.png) 54 21 21 21 stretch stretch;
+	}
+}
+
+.enyo-group-label {
+	margin: -34px -12px;
+	padding: 4px 0 12px 10px;
+	font-size: .7rem;
+	color: #fff;
+	text-shadow: #646454 0 1px 0;
+	font-weight: bold;
+	height: 44px;
+	text-transform: uppercase;
+}
+
+.enyo-group-label.enyo-group-fit {
+	margin-bottom: -21px;
+}
+
+/* palm/themes/Onyx/css/RoundedInput.css */
+
+.enyo-input.enyo-rounded-input, .enyo-input.enyo-rounded-input.enyo-input-focus {
+	border-width: 6px 20px;
+	-webkit-box-sizing: border-box;
+	-webkit-border-image: url(palm/themes/Onyx/images/roundedbox.png) 6 20;
+	margin: 2px 0;
+	font-size: .8rem;
+}
+
+.enyo-input.enyo-rounded-input > .enyo-input-spacing {
+	margin: -1px -10px 0 -10px;
+	min-height: 26px;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-input.enyo-rounded-input, .enyo-input.enyo-rounded-input.enyo-input-focus {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/roundedbox.png) 9 30;
+	}
+}
+
+
+/* palm/themes/Onyx/css/Input.css */
+
+.enyo-input {
+	border-width: 14px;
+	border-style: solid;
+	border-color: transparent;
+	-webkit-box-sizing: border-box;
+	font-size: .9rem;
+}
+
+.enyo-input.enyo-input-focus {
+	-webkit-border-image: url(palm/themes/Onyx/images/input-focus.png) 14 14;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-input.enyo-input-focus {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/input-focus.png) 21 21;
+	}
+}
+
+.enyo-input > .enyo-input-spacing {
+	margin: -2px -4px;
+}
+
+.enyo-input-input {
+	display: block;
+	border: none;
+	margin: 0;
+	outline: none;
+	background-color: transparent;
+	padding: 0;
+	width: 100%;
+	-webkit-appearance: caret;
+	-webkit-box-sizing: border-box;
+	cursor: pointer;
+	font-size: .9rem;
+}
+
+input::-webkit-input-placeholder, isindex::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+	color: #888;
+}
+
+.enyo-input-disabled {
+	/*color: darkGray;*/
+	/* HACK: this is needed to color a disabled input placeholder.
+	 * Also works for filled inputs as well thankfully */
+	-webkit-text-fill-color: #888;
+	opacity: 0.625;
+}
+
+.enyo-input-input:focus {
+	cursor: text;
+}
+
+/* 
+FIXME: we almost always want some padding on a enyo-item, except when it's surrounding 
+		a fancy-input.... so we special case that here, non-ideal 
+*/
+.enyo-item > .enyo-input {
+	margin: -11px -10px;
+}
+
+/* Row styling for inputs */
+.enyo-first.enyo-input.enyo-input-focus, .enyo-first > .enyo-input.enyo-input-focus {
+	padding-bottom: 12px;
+	border-width: 14px 14px 2px 14px;
+	-webkit-border-image: url(palm/themes/Onyx/images/input-first-focus.png) 14 14 2 14;
+}
+
+.enyo-last.enyo-input.enyo-input-focus, .enyo-last > .enyo-input.enyo-input-focus {
+	padding-top: 12px;
+	border-width: 2px 14px 14px 14px;
+	-webkit-border-image: url(palm/themes/Onyx/images/input-last-focus.png) 2 14 14 14;
+}
+
+/* NOTE: .enyo-middle is a boxy input type automatically applied when the input is the middle item in a group
+.enyo-box-input an alias which users can use to create a rectangular input.
+*/
+.enyo-box-input.enyo-input.enyo-input-focus, .enyo-middle.enyo-input.enyo-input-focus, .enyo-middle > .enyo-input.enyo-input-focus {
+	background-color: transparent;
+	border-width: 14px;
+	-webkit-border-image: url(palm/themes/Onyx/images/input-middle-focus.png) 14 14;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-first.enyo-input.enyo-input-focus, .enyo-first > .enyo-input.enyo-input-focus {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/input-first-focus.png) 21 21 3 21;
+	}
+	.enyo-last.enyo-input.enyo-input-focus, .enyo-last > .enyo-input.enyo-input-focus {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/input-last-focus.png) 3 21 21 21;
+	}
+	
+	.enyo-box-input.enyo-input.enyo-input-focus, .enyo-middle.enyo-input.enyo-input-focus, .enyo-middle > .enyo-input.enyo-input-focus {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/input-middle-focus.png) 21 21;
+	}
+}
+
+
+/* palm/themes/Onyx/css/SearchInput.css */
+
+.enyo-search-input-search {
+	height: 20px;
+	width: 20px;
+	margin: 2px;
+	background-image: url(palm/themes/Onyx/images/search-input-search.png);
+}
+
+.enyo-search-input-cancel {
+	background-image: url(palm/themes/Onyx/images/search-input-cancel.png);
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-search-input-search {
+		background-image: url(palm/themes/Onyx/images-1.5/search-input-search.png);
+		background-size: 20px 20px;
+	}
+	.enyo-search-input-cancel {
+		background-image: url(palm/themes/Onyx/images-1.5/search-input-cancel.png);
+		background-size: 20px 20px;
+	}
+}
+
+/* palm/themes/Onyx/css/ToolInput.css */
+
+.enyo-input.enyo-tool-input {
+	font-size: .8rem;
+	border-width: 6px 6px 6px 6px;
+	border-style: solid;
+	border-color: transparent;
+	-webkit-box-sizing: border-box;
+	-webkit-border-image: url(palm/themes/Onyx/images/input-tool.png) 6 6 6 6;
+	margin: 0 3px;
+}
+
+.enyo-input.enyo-tool-input.enyo-input-focus {
+	-webkit-border-image: url(palm/themes/Onyx/images/input-tool-focus.png) 6 6 6 6;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-input.enyo-tool-input {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/input-tool.png) 9 9 9 9;
+	}
+	.enyo-input.enyo-tool-input.enyo-input-focus {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/input-tool-focus.png) 9 9 9 9;
+	}
+}
+
+.enyo-input.enyo-tool-input > .enyo-input-spacing {
+	margin: -1px;
+}
+
+.enyo-input.enyo-tool-input .enyo-input-input {
+	color: #e5e5e5;
+	font-size: 16px;
+	padding: 2px 0 1px 0;
+}
+
+.enyo-input.enyo-tool-input .enyo-input-input:focus, .enyo-input.enyo-tool-input.enyo-input-focus .enyo-input-input {
+	color: #000;
+}
+
+.enyo-input.enyo-tool-input .enyo-input-input::-webkit-input-placeholder {
+	color: #ddd;
+}
+
+.enyo-input.enyo-tool-input.enyo-input-focus .enyo-input-input::-webkit-input-placeholder {
+	color: DarkGray;
+}
+
+/* palm/themes/Onyx/css/RichText.css */
+
+.enyo-richtext-hint {
+	color: #888;
+}
+
+
+/* palm/themes/Onyx/css/Spinner.css */
+
+.enyo-spinner {
+	width: 32px;
+	height: 32px;
+	-webkit-box-sizing: border-box;
+	background-image: url(palm/themes/Onyx/images/spinner.png);
+}
+
+.enyo-spinner-large {
+	width: 128px;
+	height: 128px;
+	-webkit-box-sizing: border-box;
+	background-image: url(palm/themes/Onyx/images/spinner-large.png);
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-spinner {
+		background-image: url(palm/themes/Onyx/images-1.5/spinner.png);
+		background-size: 32px 384px;
+	}
+
+	.enyo-spinner-large {
+		background-image: url(palm/themes/Onyx/images-1.5/spinner-large.png);
+		background-size: 128px 1536px;
+	}
+}
+
+
+/* palm/themes/Onyx/css/Dialog.css */
+
+.enyo-dialog {
+	left: 0px;
+	right: 0px;
+	bottom: 0;
+	border-width: 32px 24px 32px 24px;
+	-webkit-border-image: url(palm/themes/Onyx/images/toaster-dialog.png) 32 24 32 24 stretch stretch;
+}
+
+.enyo-dialog-inner {
+	margin: -32px -24px -32px -24px;
+	padding-top: 23px;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-toaster-dialog {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/toaster-dialog.png) 48 36 48 36 stretch stretch;
+	}
+}
+
+/* palm/themes/Onyx/css/DialogPrompt.css */
+
+.enyo-dialog-prompt-title {
+	color: #4c4c4c;
+	text-shadow: #f2f2f2 0px 0px 1px;
+	font-size: 21px;
+	padding: 0 0 10px 10px;
+	word-wrap: break-word;
+	border-bottom: 1px solid gray;
+}
+
+.enyo-dialog-prompt-message {
+	color: #222;
+	font-size: 16px;
+	padding: 10px;
+}
+
+.enyo-dialog-prompt-content {
+	padding: 10px;
+}
+
+/* palm/themes/Onyx/css/Toaster.css */
+
+.enyo-toaster {
+	position: absolute;
+	-webkit-box-sizing: border-box;
+	-webkit-transform-style: preserve-3d;
+}
+
+/* palm/themes/Onyx/css/SlidingPane.css */
+
+.enyo-sliding-pane {
+	overflow: hidden;
+}
+
+/* palm/themes/Onyx/css/SlidingView.css */
+
+.enyo-sliding-view-shadow {
+	position: absolute;
+	z-index: 2;
+	height: 100%;
+	width: 20px;
+	left: -20px;
+	background: url(palm/themes/Onyx/images/sliding-shadow.png) repeat-y;
+	background-size: 20px 2px;
+	pointer-events: none;
+}
+
+.enyo-sliding-view-nub {
+	position: absolute;
+	-webkit-box-sizing: border-box;
+	cursor: pointer;
+	z-index: 2;
+	left: -20px;
+	width: 40px;
+	top: 0;
+	bottom: 0;
+}
+
+.enyo-sliding-view {
+	position: relative;
+	/* make sure the layer exist from the beginning so behavior doesn't change
+	   the first time it's dragged.  This makes debugging and performance
+	   erratic */
+	-webkit-transform: translate3d(0,0,0);
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-sliding-view-shadow {
+		background-image: url(palm/themes/Onyx/images-1.5/sliding-shadow.png);
+	}
+}
+
+/* palm/themes/Onyx/css/ImageView.css */
+
+.enyo-viewimage {
+	position: relative;
+}
+
+.enyo-viewimage-image {
+	display: block;
+	margin: auto;
+}
+
+/* palm/themes/Onyx/css/CroppableImage.css */
+
+.enyo-croppable-image {
+	position: relative;
+}
+
+
+/* palm/themes/Onyx/css/WebView.css */
+
+.enyo-webview-animate {
+	-webkit-transition: -webkit-transform 0.5s ease-in;
+}
+
+.enyo-webview-flashpopup-animate {
+	-webkit-transition: opacity 1s linear;
+}
+
+.enyo-webview-popup-spinner {
+	min-width: 0px;
+	-webkit-border-image: none;
+}
+
+
+/* palm/themes/Onyx/css/ModalDialog.css */
+
+.enyo-modaldialog {
+	width: 320px;
+	border-width: 42px 24px 24px;
+	-webkit-border-image: url(palm/themes/Onyx/images/dialog.png) 42 24 24 24 stretch stretch;
+	-webkit-transition-property: opacity;
+	-webkit-transition-duration: 0.5s;
+	opacity: 0;
+}
+
+.enyo-modaldialog.enyo-modaldialog-open {
+	opacity: 1;
+}
+
+.enyo-modaldialog-container {
+	margin: -22px -4px -4px;
+}
+.enyo-modaldialog-title {
+	font-size: 1rem;
+	margin: 0 0 10px;
+	text-align: center;
+}
+.enyo-modaldialog-container .enyo-group,
+.enyo-modaldialog-container .group {
+	border-width: 14px;
+	-webkit-border-image: url(palm/themes/Onyx/images/dialog-group-unlabeled.png) 14 14 repeat repeat;
+	margin: 8px 0;
+}
+.enyo-modaldialog-container .enyo-group.labeled {
+	border-width: 36px 14px 14px 14px;
+	-webkit-border-image: url(palm/themes/Onyx/images/dialog-group-labeled.png) 36 14 14 14 repeat repeat;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-modaldialog {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/dialog.png) 63 36 36 36 stretch stretch;
+	}
+	
+	.enyo-modaldialog-container .enyo-group,
+	.enyo-modaldialog-container .group {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/dialog-group-unlabeled.png) 21 21 stretch stretch;
+	}
+	
+	.enyo-modaldialog-container .enyo-group.labeled {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/dialog-group-labeled.png) 54 21 21 21 stretch stretch;
+	}
+}
+
+
+
+/* palm/themes/Onyx/css/FilePicker.css */
+
+.enyo-filepicker {
+	width: 450px;
+	border-width: 24px;
+	-webkit-border-image: url(palm/themes/Onyx/images/filepicker.png) 25 stretch stretch;
+}
+
+.enyo-filepicker-container {
+	margin: -4px;
+	height: 600px;
+}
+
+.enyo-filepicker .enyo-iframe {
+	background-color: #ccc;
+}
+
+.enyo-filepicker-mainview .enyo-group,
+.enyo-filepicker-mainview .group {
+	border-width: 14px;
+	-webkit-border-image: url(palm/themes/Onyx/images/dialog-group-unlabeled.png) 14 14 repeat repeat;
+	margin: 8px 0;
+}
+
+.enyo-filepicker-mainview .enyo-group.labeled {
+	border-width: 36px 14px 14px 14px;
+	-webkit-border-image: url(palm/themes/Onyx/images/dialog-group-labeled.png) 36 14 14 14 repeat repeat;
+}
+
+@media (-webkit-min-device-pixel-ratio:1.5) {
+	.enyo-filepicker {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/filepicker.png) 36 stretch stretch;
+	}
+	
+	.enyo-filepicker-mainview .enyo-group,
+	.enyo-filepicker-mainview .group {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/modaldialog-group-unlabeled.png) 21 21 stretch stretch;
+	}
+	
+	.enyo-filepicker-mainview .enyo-group.labeled {
+		-webkit-border-image: url(palm/themes/Onyx/images-1.5/modaldialog-group-labeled.png) 54 21 21 21 stretch stretch;
+	}
+}
+
+
+
+/* palm/themes/Onyx/css/VirtualScroller.css */
+
+.enyo-virtual-scroller {
+	overflow: hidden;
+	position: relative;
+}
+
+.enyo-accel-children > * {
+	-webkit-transform-style: preserve-3d;
+}

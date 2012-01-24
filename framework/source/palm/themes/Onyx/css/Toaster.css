@@ -1,0 +1,5 @@
+.enyo-toaster {
+	position: absolute;
+	-webkit-box-sizing: border-box;
+	-webkit-transform-style: preserve-3d;
+}

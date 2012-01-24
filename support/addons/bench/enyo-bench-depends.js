@@ -1,0 +1,9 @@
+enyo.depends(
+	"test.js",
+	"testControls.js",
+	"TestItem.js",
+	"TestBanner.js",
+	"TestRunner.js",
+	"css/TestItem.css",
+	"css/TestRunner.css"
+);

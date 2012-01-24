@@ -1,0 +1,11 @@
+body {
+	background-color: #e4e4e2;
+}
+
+.enyo-bg {
+	background-color: #e4e4e2;
+}
+
+.enyo-text-filter-highlight {
+	background: url(../images/filter-highlight.png) bottom left repeat-x;
+}

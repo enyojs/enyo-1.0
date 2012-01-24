@@ -1,0 +1,8 @@
+.enyo-accept-drag {
+	background-color: lightblue;
+}
+
+.app-avatar {
+	pointer-events: none;
+	position: absolute;
+}

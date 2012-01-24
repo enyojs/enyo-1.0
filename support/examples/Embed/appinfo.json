@@ -1,0 +1,10 @@
+{
+	"id": "com.palmdts.enyo.embedsample",
+	"version": "1.0.0",
+	"vendor": "enyo",
+	"type": "web",
+	"main": "index.html",
+	"title": "Enyo Embed",
+	"icon": "icon.png",
+	"uiRevision": 2
+}

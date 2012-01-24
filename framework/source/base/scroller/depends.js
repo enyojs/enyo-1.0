@@ -1,0 +1,10 @@
+enyo.depends(
+	"ScrollStrategy.js",
+	"ScrollFades.js",
+	"DragScroller.js",
+	"BasicScroller.js",
+	"Scroller.js",
+	"TransformScroller.js",
+	"SnapScroller.js",
+	"FadeScroller.js"
+);

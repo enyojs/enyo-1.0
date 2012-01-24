@@ -1,0 +1,10 @@
+{
+	"id": "com.palmdts.enyo.layout1",
+	"version": "1.0.0",
+	"vendor": "HP",
+	"type": "web",
+	"main": "index.html",
+	"title": "Enyo Layout-1",
+	"icon": "icon.png",
+	"uiRevision": 2
+}

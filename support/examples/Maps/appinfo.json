@@ -1,0 +1,9 @@
+{
+	"id": "com.palmdts.enyo-maps-example",
+	"version": "1.0.0",
+	"vendor": "HP",
+	"type": "web",
+	"main": "index.html",
+	"uiRevision": 2,
+	"title": "Maps Example"
+}

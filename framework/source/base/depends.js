@@ -1,0 +1,11 @@
+enyo.depends(
+	"layout/",
+	"scroller/",
+	"list/",
+	"repeaters/",
+	"controls/",
+	"containers/",
+	"services/",
+	"media/",
+	"themes/default-theme/"
+);

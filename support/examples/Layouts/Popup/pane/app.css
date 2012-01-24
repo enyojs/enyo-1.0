@@ -1,0 +1,54 @@
+.transitioner {
+	-webkit-transform: scale(2);
+	opacity: 0;
+	-webkit-transition-property: opacity, -webkit-transform;
+	-webkit-transition-duration: 0.3s;
+}
+
+.scaleFadeIn {
+	-webkit-transform: scale(1);
+	opacity: 1;
+}
+
+.fastAnimate {
+}
+
+
+.transitioner2 {
+	-webkit-transform: scale(0);
+	opacity: 0;
+	-webkit-transition-property: opacity, -webkit-transform;
+	-webkit-transition-duration: 1s, 1s;
+}
+
+.zoomFadeIn {
+	-webkit-transform: scale(1);
+	opacity: 1;
+}
+
+
+.fadedOut {
+	opacity: 0;
+	-webkit-transition-property: opacity;
+	-webkit-transition-duration: 1s;
+}
+
+.fadeIn {
+	opacity: 1;
+}
+
+.scrimFadeIn {
+	opacity: 0.75;
+	-webkit-transition-property: opacity;
+	-webkit-transition-duration: 1s;
+}
+
+.transitioner3 {
+	-webkit-transform: scale(0);
+	-webkit-transform-origin: 50% 0;
+	-webkit-transition-duration: 0.3s;
+}
+
+.scaleIn {
+	-webkit-transform: scale(1);
+}

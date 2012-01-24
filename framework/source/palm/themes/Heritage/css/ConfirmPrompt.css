@@ -1,0 +1,11 @@
+.enyo-confirmprompt {
+	position: relative;
+}
+
+.enyo-confirmprompt-scrim {
+	background-color: rgba(228, 228, 226, .5);
+}
+
+.enyo-confirmprompt-button {
+	margin: 0 10px;
+}

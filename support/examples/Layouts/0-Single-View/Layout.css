@@ -1,0 +1,9 @@
+.layout {
+	background-color: gray;
+}
+
+.view0 {
+	border: 6px solid green;
+	padding-bottom: 1400px;
+	background: #eeeeee url(hash.png);
+}

@@ -1,0 +1,12 @@
+.enyo-test-runner {
+	font-size: 12px;
+}
+
+.enyo-test-header {
+	padding: 10px;
+	border-bottom: 1px solid black;
+	background: navy;
+	color: white;
+	font-weight: bold;
+	font-size: 16px;
+}

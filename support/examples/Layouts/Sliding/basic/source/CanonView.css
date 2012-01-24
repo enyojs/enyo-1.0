@@ -1,0 +1,14 @@
+.enyo-canonview-header {
+	padding: 10px;
+	background: #ccc;
+	margin-bottom: 4px;
+	border-bottom: 1px solid gray;
+}
+
+.enyo-canonview-client {
+	padding: 10px;
+}
+
+.margin-medium {
+	margin: 10px;
+}

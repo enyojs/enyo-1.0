@@ -1,0 +1,10 @@
+{
+	"id": "com.palmdts.enyo.popup-pane",
+	"version": "1.0.0",
+	"vendor": "HP",
+	"type": "web",
+	"main": "index.html",
+	"title": "Enyo Popup Pane",
+	"icon": "icon.png",
+	"uiRevision": 2
+}
