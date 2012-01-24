@@ -1,0 +1,26 @@
+{
+  "author": "Daniel Freedman <daniel.freedman@palm.com>",
+  "name": "enyo-compress",
+  "description": "Compress enyo applications and framework",
+  "version": "0.0.1",
+  "homepage": "https://www.github.com/enyojs/enyo-1.0",
+  "repository": {
+    "url": "https://www.github.com/enyojs/enyo-1.0"
+  },
+  "engines": {
+    "node": ">=v0.4"
+  },
+  "dependencies": {
+    "nopt": "1",
+    "colors": "0",
+    "uglify-js": "1",
+    "poolr": "0",
+    "mkdirp": "0",
+    "stepup": "0",
+    "rimraf": "1"
+  },
+  "optdependencies": {
+    "express": "2.5"
+  },
+  "bin": "./enyo-compress.js"
+}
