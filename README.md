@@ -4,7 +4,7 @@ Enyo 1.0 JavaScript Application Framework
 This is Enyo 1.0, the original version of the JavaScript application framework
 that was distributed in HP webOS 2.2 and 3.0.  This code has only been tested
 throughly in the webOS runtime environment, although it has been used
-extensively in desktop versions of Google Chrome and Apple Safari, two
+extensively in desktop versions of Google Chrome and Apple Safari.
 
 This version, tagged as "r1", corresponds with Enyo 1.0 submission 128 that
 shipped on HP webOS 3.0.5 in January 2012.
