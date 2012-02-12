@@ -10816,9 +10816,12 @@ this.shouldDragSelect = b < this.slidePosition;
 if (b < this.dragMin || b > this.dragMax && !this.overSliding || b < this.dragMax && this.overSliding) return {
 select: this.getDragSelect()
 };
-if (this.overSliding && !this.dismissible) {
 var c = this.lastDragDx || 0;
+if (this.overSliding && !this.dismissible) {
 b = (a.dx - c) / 4 + this.slidePosition;
+}
+else {
+b = (a.dx - c) + this.slidePosition;
 }
 this.lastDragDx = a.dx;
 var d = Math.max(this.dragMin, Math.min(b, this.overSliding ? 1e9 : this.dragMax));
