@@ -8468,6 +8468,7 @@ confirmWhenAutoHidden: !1,
 allowLeft: !0
 },
 triggerRatio: .35,
+dragOffset: 0,
 className: "enyo-item enyo-swipeableitem",
 lastConfirmIndex: null,
 events: {
@@ -8505,10 +8506,10 @@ flickHandler: function(a, b) {
 return this.handlingDrag;
 },
 dragstartHandler: function(a, b) {
-return this.resetPosition(), this.swipeable && b.horizontal && !this.confirmShowing && this.hasNode() ? (this.triggerDistance = this.fetchTriggerDistance(), this.index = b.rowIndex, this.handlingDrag = !0, !0) : this.fire("ondragstart", b);
+return this.resetPosition(), this.swipeable && b.horizontal && !this.confirmShowing && this.hasNode() ? (this.dragOffset = this.getDx(b), this.triggerDistance = this.fetchTriggerDistance(), this.index = b.rowIndex, this.handlingDrag = !0, !0) : this.fire("ondragstart", b);
 },
 dragHandler: function(a, b) {
-var c = this.getDx(b);
+var c = this.getDx(b) - this.dragOffset;
 if (this.handlingDrag) return this.hasNode() ? (this.node.style.webkitTransform = "translate3d(" + c + "px, 0, 0)", this.doDrag(c)) : enyo.log("drag with no node!"), !0;
 },
 dragfinishHandler: function(a, b) {
@@ -10486,6 +10487,7 @@ className: "enyo-toaster",
 published: {
 flyInFrom: "bottom"
 },
+dragOffset: 0,
 chrome: [ {
 name: "animator",
 kind: enyo.Animator,
@@ -10525,11 +10527,11 @@ isHorizontal: function() {
 return this.flyInFrom == "right" || this.flyInFrom == "left";
 },
 dragstartHandler: function(a, b) {
-this.isDraggableEvent(b) && (this.dragging = !0, this.dragD0 = 0);
+this.isDraggableEvent(b) && (this.dragging = !0, this.dragD0 = 0, this.dragOffset = this.isHorizontal() ? b.dx : b.dy);
 },
 dragHandler: function(a, b) {
 if (this.dragging) {
-var c = this.isHorizontal() ? b.dx : b.dy;
+var c = this.isHorizontal() ? b.dx - this.dragOffset : b.dy - this.dragOffset;
 this.dragD = this.dragD0 - c, this.dragD0 = c;
 if (this.dragD0 * (this.flyInFrom == "right" || this.flyInFrom == "bottom" ? 1 : -1) > 0) {
 var d = "translate3d(" + (this.isHorizontal() ? this.dragD0 + "px,0,0)" : "0," + this.dragD0 + "px,0)");
@@ -10537,13 +10539,6 @@ this.domStyles["-webkit-transform"] = this.node.style.webkitTransform = d;
 }
 }
 },
-dragfinishHandler: function(a, b) {
-if (this.dragging) {
-var c = this.hasNode()["client" + (this.isHorizontal() ? "Width" : "Height")], d = Math.abs(this.dragD0 / c) * 100;
-this.setShowHideMode("manual"), this.dragD * (this.flyInFrom == "right" || this.flyInFrom == "bottom" ? 1 : -1) > 0 ? (this.startAnimate(d, 0), this.open()) : (this.startAnimate(d, 100), this.close()), this.setShowHideMode("auto"), this.dragging = !1;
-}
-}
-});
 
 // palm/containers/Dialog.js
 
