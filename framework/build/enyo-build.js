@@ -10539,6 +10539,13 @@ this.domStyles["-webkit-transform"] = this.node.style.webkitTransform = d;
 }
 }
 },
+dragfinishHandler: function(a, b) {
+if (this.dragging) {
+var c = this.hasNode()["client" + (this.isHorizontal() ? "Width" : "Height")], d = Math.abs(this.dragD0 / c) * 100;
+this.setShowHideMode("manual"), this.dragD * (this.flyInFrom == "right" || this.flyInFrom == "bottom" ? 1 : -1) > 0 ? (this.startAnimate(d, 0), this.open()) : (this.startAnimate(d, 100), this.close()), this.setShowHideMode("auto"), this.dragging = !1;
+}
+}
+});
 
 // palm/containers/Dialog.js
 
