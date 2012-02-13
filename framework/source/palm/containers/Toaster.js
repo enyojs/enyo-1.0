@@ -43,6 +43,7 @@ enyo.kind({
 		flyInFrom: "bottom"
 	},
 	//* @protected
+	dragOffset: 0,
 	chrome: [
 		{name: "animator", kind: enyo.Animator, onAnimate: "animate", onEnd: "finishAnimate"}
 	],
@@ -105,11 +106,12 @@ enyo.kind({
 		if (this.isDraggableEvent(inEvent)) {
 			this.dragging = true;
 			this.dragD0 = 0;
+			this.dragOffset = this.isHorizontal() ? inEvent.dx : inEvent.dy;
 		}
 	},
 	dragHandler: function(inSender, inEvent) {
 		if (this.dragging) {
-			var d = this.isHorizontal() ? inEvent.dx : inEvent.dy;
+			var d = this.isHorizontal() ? inEvent.dx - this.dragOffset : inEvent.dy - this.dragOffset;
 			this.dragD = this.dragD0 - d;
 			this.dragD0 = d;
 			if ((this.dragD0 * ((this.flyInFrom == "right" || this.flyInFrom == "bottom") ? 1 : -1)) > 0) {

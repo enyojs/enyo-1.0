@@ -47,6 +47,7 @@ enyo.kind({
 		allowLeft: true
 	},
 	triggerRatio: 0.35,
+	dragOffset: 0,
 	className: "enyo-item enyo-swipeableitem",
 	lastConfirmIndex: null,
 	events: {
@@ -107,6 +108,7 @@ enyo.kind({
 	dragstartHandler: function(inSender, inEvent) {
 		this.resetPosition();
 		if (this.swipeable && inEvent.horizontal && !this.confirmShowing && this.hasNode()) {
+			this.dragOffset = this.getDx(inEvent);
 			this.triggerDistance = this.fetchTriggerDistance();
 			this.index = inEvent.rowIndex;
 			this.handlingDrag = true;
@@ -116,7 +118,7 @@ enyo.kind({
 		}
 	},
 	dragHandler: function(inSender, inEvent) {
-		var dx = this.getDx(inEvent);
+		var dx = this.getDx(inEvent) - this.dragOffset;
 		if (this.handlingDrag) {
 			if (this.hasNode()) {
 				this.node.style.webkitTransform = "translate3d(" + dx + "px, 0, 0)";

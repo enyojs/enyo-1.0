@@ -293,10 +293,14 @@ enyo.kind({
 			return {select: this.getDragSelect()};
 		} else {
 			// based on HI request, add extra "friction" to drag when overSliding.
+			var ldx = this.lastDragDx || 0;
 			if (this.overSliding && !this.dismissible) {
 				// diminimish the user's drag to 1/4 strength
-				var ldx = this.lastDragDx || 0;
 				x0 = (e.dx - ldx) / 4 + this.slidePosition;
+			}
+			else {
+				//Fix drag snap
+				x0 = (e.dx - ldx) + this.slidePosition;
 			}
 			this.lastDragDx =  e.dx;
 			var x = Math.max(this.dragMin, Math.min(x0, this.overSliding ? 1e9 : this.dragMax));
