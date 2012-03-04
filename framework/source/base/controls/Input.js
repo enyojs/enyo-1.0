@@ -154,7 +154,7 @@ enyo.kind({
 		inEvent.preventDefault();
 		inEvent.preventDefault = function() {
 			inEvent.chromeEventPrevented = true;
-		}
+		};
 	},
 	focusHandler: function(inSender, inEvent) {
 		if (this.styled && !this.alwaysLooksFocused) {

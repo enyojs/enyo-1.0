@@ -32,7 +32,7 @@ enyo.kind({
 		onchange: ""
 	},
 	chrome: [
-		{name: "input", flex: 1, kind: enyo.BasicRichText, className: "enyo-input-input", onchange: "doChange"},
+		{name: "input", flex: 1, kind: enyo.BasicRichText, className: "enyo-input-input", onchange: "doChange"}
 	],
 	//* @protected
 	create: function() {
