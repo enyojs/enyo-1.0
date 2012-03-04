@@ -1,7 +1,7 @@
 /**
 An iframe control loads inline a web page specified by its url property.
 
-	{kind: "IFrame", url: "www.example.com"}
+	{kind: "Iframe", url: "www.example.com"}
 
 Note that when the user interacts with the page loaded in the iframe and 
 navigates to a different web page, the value of the url property does not update.
