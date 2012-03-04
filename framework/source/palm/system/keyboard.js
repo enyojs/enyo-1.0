@@ -138,10 +138,10 @@ enyo.keyboard.setManualMode = function(inManual) {
 };
 
 enyo.keyboard.suspend = function() {
-}
+};
 
 enyo.keyboard.resume = function() {
-}
+};
 
 /**
 	Show the keyboard. Requires that the keyboard is in manual mode;
@@ -234,7 +234,7 @@ enyo.requiresWindow(function() {
 	Mojo.keyboardShown = function (inKeyboardShowing) {
 		enyo.keyboard._isShowing = inKeyboardShowing;
 		enyo.dispatch({type: "keyboardShown", showing: inKeyboardShowing});
-	}
+	};
 
 
 	// Dispatcher feature hooks: resize, focus, keydown
@@ -276,13 +276,13 @@ enyo.requiresWindow(function() {
 			}
 			// call SysMgr directly so as to not mess with isManualMode
 			PalmSystem.setManualKeyboardEnabled(true);
-		}
+		};
 
 		enyo.keyboard.resume = function() {
 			if (!enyo.keyboard.isManualMode()) {
 				enyo.keyboard.setManualMode(false);
 			}
-		}
+		};
 
 		enyo.keyboard.show = function(inType) {
 			if (enyo.keyboard.isManualMode()) {
