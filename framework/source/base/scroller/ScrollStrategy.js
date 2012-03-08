@@ -183,16 +183,16 @@ enyo.kind({
 		this.job = enyo.cancelRequestAnimationFrame(this.job);
 		inFireEvent && this.doScrollStop();
 	},
-	startDrag: function(a) {
+	startDrag: function(e) {
 		this.dragT0 = new Date().getTime();
 		this.flickx = this.x, this.flicky = this.y;
-		this.dragging = !0, this.my = a.pageY, this.py = this.uy = this.y, this.mx = a.pageX, this.px = this.ux = this.x;
+		this.dragging = !0, this.my = e.pageY, this.py = this.uy = this.y, this.mx = e.pageX, this.px = this.ux = this.x;
 	},
-	drag: function(a) {
+	drag: function(e) {
 		if (this.dragging) {
-			var b = this.vertical ? a.pageY - this.my : 0;
+			var b = this.vertical ? e.pageY - this.my : 0;
 			this.uy = b + this.py, this.uy = this.boundaryDamping(this.uy, this.topBoundary, this.bottomBoundary, this.kDragDamping);
-			var c = this.horizontal ? a.pageX - this.mx : 0;
+			var c = this.horizontal ? e.pageX - this.mx : 0;
 			var currentsign = 0;
 			if(this.vertical){
 			    currentsign = (((b-this.lastb) < 0) ? -1 : 1);
@@ -209,7 +209,7 @@ enyo.kind({
 			return this.ux = c + this.px, this.ux = this.boundaryDamping(this.ux, this.leftBoundary, this.rightBoundary, this.kDragDamping), this.start(), !0;
 		}
 	},
-	dragDrop: function(a) {
+	dragDrop: function(e) {
 		if (this.dragging && !window.PalmSystem) {
 			var b = .5;
 			this.y = this.uy, this.y0 = this.y - (this.y - this.y0) * b, this.x = this.ux, this.x0 = this.x - (this.x - this.x0) * b;
