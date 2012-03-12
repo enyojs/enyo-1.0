@@ -33,6 +33,9 @@ enyo.kind({
 		if (window.PhoneGap) {
 			this.media = new Media(path);
 		} else {
+			if(this.audio) {
+			    this.audio.pause();
+			}
 			this.audio = new Audio();
 			this.audio.src = path;
 		}

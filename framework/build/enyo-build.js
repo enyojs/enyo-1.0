@@ -5685,7 +5685,7 @@ this.inherited(arguments), this.srcChanged();
 },
 srcChanged: function() {
 var a = enyo.path.rewrite(this.src);
-window.PhoneGap ? this.media = new Media(a) : (this.audio = new Audio, this.audio.src = a);
+window.PhoneGap ? this.media = new Media(a) : ( (this.audio && this.audio.pause()), this.audio = new Audio, this.audio.src = a);
 this.preloadChanged(), this.audioClassChanged();
 },
 preloadChanged: function() {
