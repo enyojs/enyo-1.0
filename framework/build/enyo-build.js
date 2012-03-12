@@ -5681,11 +5681,12 @@ preload: !0,
 audioClass: null
 },
 create: function() {
-this.inherited(arguments), this.srcChanged(), this.preloadChanged(), this.audioClassChanged();
+this.inherited(arguments), this.srcChanged();
 },
 srcChanged: function() {
 var a = enyo.path.rewrite(this.src);
-window.PhoneGap ? this.media = new Media(a) : (this.audio = new Audio, this.audio.src = a);
+window.PhoneGap ? this.media = new Media(a) : ( (this.audio && this.audio.pause()), this.audio = new Audio, this.audio.src = a);
+this.preloadChanged(), this.audioClassChanged();
 },
 preloadChanged: function() {
 this.audio && this.audio.setAttribute("preload", this.preload ? "auto" : "none");

@@ -27,17 +27,20 @@ enyo.kind({
 	create: function() {
 		this.inherited(arguments);
 		this.srcChanged();
-		this.preloadChanged();
-		this.audioClassChanged();
 	},
 	srcChanged: function() {
 		var path = enyo.path.rewrite(this.src);
 		if (window.PhoneGap) {
 			this.media = new Media(path);
 		} else {
+			if(this.audio) {
+			    this.audio.pause();
+			}
 			this.audio = new Audio();
 			this.audio.src = path;
 		}
+		this.preloadChanged();
+		this.audioClassChanged();
 	},
 	preloadChanged: function() {
 		//this.setAttribute("autobuffer", this.preload ? "autobuffer" : null);
