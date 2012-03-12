@@ -27,8 +27,6 @@ enyo.kind({
 	create: function() {
 		this.inherited(arguments);
 		this.srcChanged();
-		this.preloadChanged();
-		this.audioClassChanged();
 	},
 	srcChanged: function() {
 		var path = enyo.path.rewrite(this.src);
@@ -38,6 +36,8 @@ enyo.kind({
 			this.audio = new Audio();
 			this.audio.src = path;
 		}
+		this.preloadChanged();
+		this.audioClassChanged();
 	},
 	preloadChanged: function() {
 		//this.setAttribute("autobuffer", this.preload ? "autobuffer" : null);
