@@ -49,7 +49,7 @@ enyo.kind({
 	},
 	layoutKindChanged: function() {
 		this.inherited(arguments);
-		this.scrollH = this.layoutKind == "HFlexLayout";
+		this.scrollH = (this.layoutKind == "HFlexLayout") || (this.layoutKind === enyo.HFlexLayout);
 		var p = this.revealAmount + "px";
 		this.$.client.applyStyle("padding", this.scrollH ? "0 "+p : p+" 0");
 	},

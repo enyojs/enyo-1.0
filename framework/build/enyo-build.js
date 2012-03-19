@@ -3251,7 +3251,7 @@ create: function() {
 this.inherited(arguments), this.$.scroll.kFrictionDamping = .85;
 },
 layoutKindChanged: function() {
-this.inherited(arguments), this.scrollH = this.layoutKind == "HFlexLayout";
+this.inherited(arguments), this.scrollH = (this.layoutKind == "HFlexLayout") || (this.layoutKind === enyo.HFlexLayout);
 var a = this.revealAmount + "px";
 this.$.client.applyStyle("padding", this.scrollH ? "0 " + a : a + " 0");
 },
