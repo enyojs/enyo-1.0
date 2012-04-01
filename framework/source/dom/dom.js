@@ -247,22 +247,24 @@ enyo.dom = {
 	getClipboard: function(inCallback) {
 		if (!this._clipboardTextArea) {
 			this._clipboardTextArea = enyo.makeElement("textarea");
+			this._clipboardTextArea.oninput = function(){
+				if(this._clipboardTextArea.value !== ""){
+					inCallback(this._clipboardTextArea.value);
+				}
+				// 'Hide' the textarea until it is needed again.
+				this._clipboardTextArea.value = "";
+				this._clipboardTextArea.blur();
+				document.body.removeChild(this._clipboardTextArea);
+			}.bind(this);
 		}
-		this._clipboardTextArea.value = "";
 		document.body.appendChild(this._clipboardTextArea);
-		enyo.keyboard.suspend();
+		this._clipboardTextArea.value = "";
+		enyo.keyboard.suspend();	
 		this._clipboardTextArea.select();
 		if (window.PalmSystem) {
 			PalmSystem.paste();
 		} else {
 			document.execCommand("paste");
 		}
-		// paste is async, so we have to wait for it to process before returning / removing text area
-		enyo.asyncMethod(this, function(){
-			inCallback(this._clipboardTextArea.value);
-			this._clipboardTextArea.blur();
-			enyo.keyboard.resume();
-			document.body.removeChild(this._clipboardTextArea);
-		});
 	}
 };
