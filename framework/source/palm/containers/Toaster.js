@@ -95,6 +95,11 @@ enyo.kind({
 			this.hide();
 		}
 	},
+        // Popup calls afterOpen in its finishOpen, override that call
+        finishOpen: function() {
+            this.renderOpen();
+            this.showHideScrim(this.isOpen);
+        },
 	isDraggableEvent: function(inEvent) {
 		var c = inEvent.dispatchTarget;
 		return c && c.slidingHandler;

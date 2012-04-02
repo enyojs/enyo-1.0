@@ -47,7 +47,9 @@ enyo.kind({
 			// if we've only found the bottom boundary, we need to search for additional content above the pivot
 			} else if (this.topBoundary == 9e9) {
 				this.tryUnshiftPage();
-			}
+			} else if (this.topBoundary === 0 && this.bottomBoundary === -9e9) {
+				break;
+ 			}
 			// resolve conflicting boundaries
 			this.validateBoundaries();
 		}
