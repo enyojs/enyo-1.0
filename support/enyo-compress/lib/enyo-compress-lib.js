@@ -394,7 +394,7 @@ function catjs(inDir, inFile, callback) {
 			return data;
 		},
 		function finish(data) {
-			callback(null, {content: "// " + inFile + "\n\n" + data + "\n", original: original, shrunk: shrunk});
+			callback(null, {content: "// " + inFile.replace(/\\/g, "/") + "\n\n" + data + "\n", original: original, shrunk: shrunk});
 		}
 	);
 }

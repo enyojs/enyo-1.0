@@ -1570,9 +1570,9 @@ setClipboard: function(a) {
 this._clipboardTextArea || (this._clipboardTextArea = enyo.makeElement("textarea")), this._clipboardTextArea.value = a, document.body.appendChild(this._clipboardTextArea), enyo.keyboard.suspend(), this._clipboardTextArea.select(), document.execCommand("cut"), this._clipboardTextArea.blur(), enyo.keyboard.resume(), document.body.removeChild(this._clipboardTextArea);
 },
 getClipboard: function(a) {
-this._clipboardTextArea || (this._clipboardTextArea = enyo.makeElement("textarea")), this._clipboardTextArea.value = "", document.body.appendChild(this._clipboardTextArea), enyo.keyboard.suspend(), this._clipboardTextArea.select(), window.PalmSystem ? PalmSystem.paste() : document.execCommand("paste"), enyo.asyncMethod(this, function() {
-a(this._clipboardTextArea.value), this._clipboardTextArea.blur(), enyo.keyboard.resume(), document.body.removeChild(this._clipboardTextArea);
-});
+this._clipboardTextArea || (this._clipboardTextArea = enyo.makeElement("textarea"), this._clipboardTextArea.oninput = function() {
+this._clipboardTextArea.value !== "" && a(this._clipboardTextArea.value), this._clipboardTextArea.value = "", this._clipboardTextArea.blur(), document.body.removeChild(this._clipboardTextArea);
+}.bind(this)), document.body.appendChild(this._clipboardTextArea), this._clipboardTextArea.value = "", enyo.keyboard.suspend(), this._clipboardTextArea.select(), window.PalmSystem ? PalmSystem.paste() : document.execCommand("paste");
 }
 };
 
@@ -3251,7 +3251,7 @@ create: function() {
 this.inherited(arguments), this.$.scroll.kFrictionDamping = .85;
 },
 layoutKindChanged: function() {
-this.inherited(arguments), this.scrollH = (this.layoutKind == "HFlexLayout") || (this.layoutKind === enyo.HFlexLayout);
+this.inherited(arguments), this.scrollH = this.layoutKind == "HFlexLayout" || this.layoutKind === enyo.HFlexLayout;
 var a = this.revealAmount + "px";
 this.$.client.applyStyle("padding", this.scrollH ? "0 " + a : a + " 0");
 },
@@ -5685,8 +5685,7 @@ this.inherited(arguments), this.srcChanged();
 },
 srcChanged: function() {
 var a = enyo.path.rewrite(this.src);
-window.PhoneGap ? this.media = new Media(a) : ( (this.audio && this.audio.pause()), this.audio = new Audio, this.audio.src = a);
-this.preloadChanged(), this.audioClassChanged();
+window.PhoneGap ? this.media = new Media(a) : (this.audio && this.audio.pause(), this.audio = new Audio, this.audio.src = a), this.preloadChanged(), this.audioClassChanged();
 },
 preloadChanged: function() {
 this.audio && this.audio.setAttribute("preload", this.preload ? "auto" : "none");
@@ -10520,6 +10519,9 @@ e += this.flyInFrom == "top" || this.flyInFrom == "left" ? -b : b, e += "%)", c.
 finishAnimate: function(a, b) {
 this.isOpen ? (enyo.asyncMethod(this, "afterOpen"), this.$.animator.setNode(null)) : this.hide();
 },
+finishOpen: function() {
+this.renderOpen(), this.showHideScrim(this.isOpen);
+},
 isDraggableEvent: function(a) {
 var b = a.dispatchTarget;
 return b && b.slidingHandler;
@@ -10820,13 +10822,7 @@ if (b < this.dragMin || b > this.dragMax && !this.overSliding || b < this.dragMa
 select: this.getDragSelect()
 };
 var c = this.lastDragDx || 0;
-if (this.overSliding && !this.dismissible) {
-b = (a.dx - c) / 4 + this.slidePosition;
-}
-else {
-b = (a.dx - c) + this.slidePosition;
-}
-this.lastDragDx = a.dx;
+this.overSliding && !this.dismissible ? b = (a.dx - c) / 4 + this.slidePosition : b = a.dx - c + this.slidePosition, this.lastDragDx = a.dx;
 var d = Math.max(this.dragMin, Math.min(b, this.overSliding ? 1e9 : this.dragMax));
 this.pendingDragMove = this._drag(d);
 },
