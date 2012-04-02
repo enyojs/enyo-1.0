@@ -90,7 +90,6 @@ enyo.kind({
 		this.callQueue = [];
 		this.dispatcher = enyo.dispatcher;
 		this.domAttributes.type = "application/x-palm-browser";
-		this.log("cache", this.cacheAdapter);
 		this.domAttributes["x-palm-cache-plugin"] = this.cacheAdapter;
 		/*
 		this._mouseInInteractive = false;
@@ -135,13 +134,11 @@ enyo.kind({
 	// (browser adapter callback) we only get this if the view is initially
 	// hidden
 	adapterInitialized: function() {
-		this.log("node", this.hasNode(), "func", this.node && this.node.openUrl);
 		this._serverConnected = false;
 		this.connect();
 	},
 	// (browser adapter callback) called when the server is connected
 	serverConnected: function() {
-		this.log();
 		this._serverConnected = true;
 		this.initView();
 		this.doConnected();
@@ -303,7 +300,6 @@ enyo.kind({
 	// flushed next time this api is called.
 	//* @public
 	callBrowserAdapter: function(inFuncName, inArgs) {
-		//this.log("node", this.hasNode(), "func", inFuncName, "?", this.node && this.node[inFuncName], "connected", this._serverConnected);
 		if (this.adapterReady() && this._serverConnected) {
 			// flush the call queue first
 			for (var i=0,q; q=this.callQueue[i]; i++) {
@@ -312,7 +308,6 @@ enyo.kind({
 			this.callQueue = [];
 			this._callBrowserAdapter(inFuncName, inArgs);
 		} else if (inFuncName !== "disconnectBrowserServer") {
-			this.log("queued!", inFuncName);
 			this.callQueue.push({name: inFuncName, args: inArgs});
 			if (this.adapterReady() && !this._serverConnected) {
 				this.connect();
@@ -321,16 +316,8 @@ enyo.kind({
 	},
 	//* @protected
 	_callBrowserAdapter: function(inFuncName, inArgs) {
-		// do not log the arguments to setHTML for privacy reasons
-		if (inFuncName == "setHTML") {
-			this.log(inFuncName);
-		} else {
-			this.log(inFuncName, inArgs);
-		}
 		if (this.node[inFuncName]) {
 			this.node[inFuncName].apply(this.node, inArgs);
-		} else {
-			this.log("no such function", inFuncName);
 		}
 	},
 	showFlashLockedMessage: function() {
@@ -365,7 +352,6 @@ enyo.kind({
 	},
 	// (browser adapter callback) used to store history and generate event
 	loadStarted: function() {
-		this.log();
 		this.doLoadStarted();
 	},
 	// (browser adapter callback) generates event that can be used to show
@@ -380,7 +366,6 @@ enyo.kind({
 	},
 	// (browser adapter callback) generates event
 	documentLoadFinished: function() {
-		this.log();
 		this.doLoadComplete();
 	},
 	// (browser adapter callback) generates event
@@ -389,7 +374,6 @@ enyo.kind({
 	},
 	// (browser adapter callback) ?
 	linkClicked : function(url) {
-		//this.log(url);
 	},
 	// (browser adapter callback) called when loading a URL that should
 	// be redirected
@@ -398,11 +382,9 @@ enyo.kind({
 	},
 	// working
 	updateGlobalHistory: function(url, reload) {
-		//this.log(url);
 	},
 	// working
 	firstPaintCompleted: function() {
-		//this.log();
 	},
 	// (browser adapter callback) used to show/hide virtual keyboard when
 	// input field is focused
@@ -454,7 +436,6 @@ enyo.kind({
 	// (browser adapter callback) called when mouse moves in or out of a
 	// non-flash interactive rect
 	mouseInInteractiveChange: function(inInteractive) {
-		//this.log(inInteractive);
 		this._mouseInInteractive = inInteractive;
 	},
 	// (browser adapter callback) called when mouse moves in or out of a
@@ -466,10 +447,8 @@ enyo.kind({
 	// (browser adapter callback) called when flash "gesture lock" state
 	// changes
 	flashGestureLockChange: function(enabled) {
-		//this.log(enabled);
 		this._flashGestureLock = enabled;
-
-                if (this._flashGestureLock) {
+        	if (this._flashGestureLock) {
                     this.showFlashLockedMessage();
                 }
 	},
@@ -497,7 +476,6 @@ enyo.kind({
 	(browser adapter callback) called when browser server disconnected
 	**/
 	browserServerDisconnected: function() {
-		this.log();
 		this._serverConnected = false;
 		this.doDisconnected();
 	},
