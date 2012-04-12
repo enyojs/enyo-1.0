@@ -36,7 +36,10 @@ if (window.PalmSystem) {
 		document.addEventListener("gesturechange", enyo.dispatch);
 		document.addEventListener("gestureend", enyo.dispatch);
 	});
-} else {
+}
+
+// window.webosEvent apparently not present on <= webOS 2.1; also needed for non-PalmSystem environments
+if (typeof(webosEvent) === "undefined") {
 	// thunk for device-only profiler API
 	webosEvent = {
 		event: enyo.nop,
