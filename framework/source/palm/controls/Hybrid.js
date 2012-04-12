@@ -46,9 +46,9 @@ enyo.kind({
 		width: 0
 	},
 	events: {
-		/** sent when the plugin has is ready to allow method calls.  This is either signaled directly by
+		/** sent when the plugin is ready to allow method calls.  This is either signaled directly by
 		    remoteadapter on newer webOS builds or signaled by the plugin code using `PDL_CallJS()` to call the 
-			"ready" method. */
+			"__PDL_PluginStatusChange__" method with "ready" as its first parameter. */
 		onPluginReady: "",
 		/** sent when the plugin executable has been started and has a made a connection back to the plugin. */
 		onPluginConnected: "",
