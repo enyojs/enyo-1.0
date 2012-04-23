@@ -2707,7 +2707,7 @@ document.ontouchstart = enyo.dispatch, document.ontouchmove = enyo.dispatch, doc
 
 // compatibility/webosGesture.js
 
-window.PalmSystem ? (enyo.dispatcher.features.push(function(a) {
+window.PalmSystem && (enyo.dispatcher.features.push(function(a) {
 enyo.webosGesture[a.type] && enyo.webosGesture[a.type](a);
 }), enyo.webosGesture = {
 mousedown: function(a) {
@@ -2721,11 +2721,11 @@ target: enyo.webosGesture.lastDownTarget
 enyo.dispatch(c);
 }, Mojo.screenOrientationChanged = function() {}, enyo.requiresWindow(function() {
 document.addEventListener("gesturestart", enyo.dispatch), document.addEventListener("gesturechange", enyo.dispatch), document.addEventListener("gestureend", enyo.dispatch);
-})) : webosEvent = {
+})), typeof webosEvent == "undefined" && (webosEvent = {
 event: enyo.nop,
 start: enyo.nop,
 stop: enyo.nop
-};
+});
 
 // base/layout/Grid.js
 
@@ -2869,7 +2869,7 @@ var a = (new Date).getTime(), b = 0, c, d, e = enyo.bind(this, function() {
 var f = (new Date).getTime();
 this.job = enyo.requestAnimationFrame(e);
 var g = f - a;
-a = f, this.dragging && (this.y0 = this.y = this.uy, this.x0 = this.x = this.ux), b += g, this.fixedTime && !this.isInOverScroll() && (b = this.interval), b = this.simulate(b), d != this.y || c != this.x ? this.scroll() : this.dragging || (this.stop(!0), this.scroll()), d = this.y, c = this.x;
+a = f, this.dragging && (this.y0 = this.y = this.uy, this.x0 = this.x = this.ux), b += Math.max(16, g), this.fixedTime && !this.isInOverScroll() && (b = this.interval), b = this.simulate(b), d != this.y || c != this.x ? this.scroll() : this.dragging || (this.stop(!0), this.scroll()), d = this.y, c = this.x;
 });
 this.job = enyo.requestAnimationFrame(e);
 },
@@ -7006,7 +7006,7 @@ lastUrl: "",
 style: "display: block; -webkit-transform:translate3d(0,0,0)",
 nodeTag: "object",
 create: function() {
-this.inherited(arguments), this.history = [], this.callQueue = [], this.dispatcher = enyo.dispatcher, this.domAttributes.type = "application/x-palm-browser", this.log("cache", this.cacheAdapter), this.domAttributes["x-palm-cache-plugin"] = this.cacheAdapter, this._flashGestureLock = !1;
+this.inherited(arguments), this.history = [], this.callQueue = [], this.dispatcher = enyo.dispatcher, this.domAttributes.type = "application/x-palm-browser", this.domAttributes["x-palm-cache-plugin"] = this.cacheAdapter, this._flashGestureLock = !1;
 },
 destroy: function() {
 this.callQueue = null, this.node.eventListener = null, this.inherited(arguments);
@@ -7022,10 +7022,10 @@ adapterReady: function() {
 return this.hasNode() && this.node.openURL;
 },
 adapterInitialized: function() {
-this.log("node", this.hasNode(), "func", this.node && this.node.openUrl), this._serverConnected = !1, this.connect();
+this._serverConnected = !1, this.connect();
 },
 serverConnected: function() {
-this.log(), this._serverConnected = !0, this.initView(), this.doConnected();
+this._serverConnected = !0, this.initView(), this.doConnected();
 },
 connect: function() {
 this.adapterReady() && !this._serverConnected && this._connect();
@@ -7114,13 +7114,13 @@ callBrowserAdapter: function(a, b) {
 if (this.adapterReady() && this._serverConnected) {
 for (var c = 0, d; d = this.callQueue[c]; c++) this._callBrowserAdapter(d.name, d.args);
 this.callQueue = [], this._callBrowserAdapter(a, b);
-} else a !== "disconnectBrowserServer" && (this.log("queued!", a), this.callQueue.push({
+} else a !== "disconnectBrowserServer" && (this.callQueue.push({
 name: a,
 args: b
 }), this.adapterReady() && !this._serverConnected && this.connect());
 },
 _callBrowserAdapter: function(a, b) {
-a == "setHTML" ? this.log(a) : this.log(a, b), this.node[a] ? this.node[a].apply(this.node, b) : this.log("no such function", a);
+this.node[a] && this.node[a].apply(this.node, b);
 },
 showFlashLockedMessage: function() {
 this.flashPopup == null && (this.flashPopup = this.createComponent({
@@ -7142,7 +7142,7 @@ urlTitleChanged: function(a, b, c, d) {
 this.lastUrl = this.url, this.url = a, this.doPageTitleChanged(enyo.string.escapeHtml(b), a, c, d);
 },
 loadStarted: function() {
-this.log(), this.doLoadStarted();
+this.doLoadStarted();
 },
 loadProgressChanged: function(a) {
 this.doLoadProgress(a);
@@ -7151,7 +7151,7 @@ loadStopped: function() {
 this.log(), this.doLoadStopped();
 },
 documentLoadFinished: function() {
-this.log(), this.doLoadComplete();
+this.doLoadComplete();
 },
 mainDocumentLoadFailed: function(a, b, c, d) {
 this.doError(b, d + ": " + c);
@@ -7204,7 +7204,7 @@ this.doNewPage(a);
 scrollTo: function(a, b) {},
 metaViewportSet: function(a, b, c, d, e, f) {},
 browserServerDisconnected: function() {
-this.log(), this._serverConnected = !1, this.doDisconnected();
+this._serverConnected = !1, this.doDisconnected();
 },
 showPrintDialog: function() {
 this.doPrint();
