@@ -152,7 +152,8 @@ enyo.kind({
 				this.x0 = this.x = this.ux;
 			}
 			// frame-time accumulator
-			t += dt;
+			// min acceptable time is 16ms (60fps)
+			t += Math.max(16, dt);
 			// alternate fixed-time step strategy:
 			if (this.fixedTime && !this.isInOverScroll()) {
 				t = this.interval;
