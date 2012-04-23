@@ -403,6 +403,11 @@ function compressCSS(sheets, outfile, buildDir, callback) {
 	var compressed = [];
 	function readAndCompress(inFile, inIndex, inCallback) {
 		stepup(
+			function (err, next) {
+				if (err) {
+					inCallback(err);
+				}
+			},
 			function() {
 				catcss(buildDir, inFile, this);
 			},
