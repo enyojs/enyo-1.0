@@ -179,6 +179,10 @@ enyo.requiresWindow(function(){
 	// LunaSysMgr calls use Mojo namespace atm
 	Mojo = window.Mojo || {};
 
+        if ((window.PalmSystem) && (window.PalmSystem.getResource) && (!window.palmGetResource)) {
+            window.palmGetResource = PalmSystem.getResource;
+        }
+
 	// system level events
 	//
 	// On a webOS device, Enyo will send a "lowMemory" event to the first component created.  This has a `state`
