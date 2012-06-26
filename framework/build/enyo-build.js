@@ -5839,6 +5839,7 @@ return enyo.fetchConfigFile("$enyo/../framework_config.json");
 }, enyo.fetchDeviceInfo = function() {
 return window.PalmSystem ? JSON.parse(PalmSystem.deviceInfo) : undefined;
 }, enyo.requiresWindow(function() {
+if ((window.PalmSystem) && (window.PalmSystem.getResource) && (!window.palmGetResource)) {window.palmGetResource = PalmSystem.getResource;}
 window.addEventListener("load", enyo.ready, !1), window.addEventListener("resize", enyo.sendOrientationChange, !1), Mojo = window.Mojo || {}, Mojo.lowMemoryNotification = function(a) {
 enyo.dispatch({
 type: "lowMemory",
