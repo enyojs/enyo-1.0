@@ -24,15 +24,17 @@ enyo.kind({
 	],
 	clickHandler: function(inSender, event) {
 		this.sendEventToApp("doTap", [this.layers[this.layers.length-1], this.makeFakeEvent(event)]);
+		event.stopPropagation();
+		return true;
 	},
 	iconTapHandler: function(inSender, event) {
 		this.sendEventToApp("doIconTap", [this.layers[this.layers.length-1], this.makeFakeEvent(event)]);
-		event.preventDefault();
+		event.stopPropagation();
 		return true;
 	},
 	msgTapHandler: function(inSender, event) {
 		this.sendEventToApp("doMessageTap", [this.layers[this.layers.length-1], this.makeFakeEvent(event)]);
-		event.preventDefault();
+		event.stopPropagation();
 		return true;
 	},
 	dbActivated: function(inSender) {
