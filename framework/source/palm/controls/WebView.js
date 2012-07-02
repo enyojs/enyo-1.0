@@ -417,6 +417,6 @@ enyo.kind({
 On non-PalmSystem platforms, revert WebView to be an Iframe.
 This allows basic use of WebView in a desktop browser.
 */
-if (!window.PalmSystem) {
+if (!window.PalmSystem && !enyo.args.haveBrowserAdapter) {
 	enyo.WebView = enyo.Iframe;
 }
